@@ -331,6 +331,181 @@ Level  Files Size(MB) Time(sec) Read(MB) Write(MB)
   5      353    11011         0       97        97
 
 
+./ycsbc -db softdb -dbfilename /dev/shm/softdb -threads 16 -P workloads/workloadc.spec
+zipfian const: 0.99
+Loads data Phase
+loading loading loading 625000 records...loading 625000 records...
+finished ops: loading 625000 records...
+finished ops: loading loading loading loading loading 625000 records...
+finished ops: loading 625000 records...
+finished ops: 0625000625000loading 625000 records...
+finished ops: loading 625000 records...
+625000loading loading 625000 records...
+625000 records...
+ records...s: 0finished ops: 0
+ records...s: 0
+loading 625000 records...
+625000 records...
+625000 records...
+ records...s: 0
+625000 records...
+0inished ops: 0
+finished ops: 620000ed ops: 500000390000: 70000
+
+# Loading records:	10000000
+Load time: 157.188s
+Read ops： 0
+Total read time: 0s
+Time per read: -nanms
+Insert ops: 0
+Total insert time: 0s
+Time per insert: -nanms
+Scan ops: 0
+Total scan time: 0s
+Time per scan: -nanms
+
+
+zipfian const: 0.99
+Performs transactions Phase
+running on 625000running on 625000running on 625000 records...running on 625000 records...
+finished ops: running on 625000 records...running on running on running on running on running on 625000running on 625000 records...
+running on 625000 records...
+running on 625000 records...running on 625000 records...
+finished ops: 0625000 records...
+finished ops: running on 625000
+ records...625000 records...
+ records...s: 0
+finished ops:  records...
+625000 records...
+finished ops: 0
+ records...s: 0
+finished ops: 00
+running on 625000 records...
+finished ops: 0
+625000 records...
+finished ops: 610000ed ops: 470000
+finished ops: 620000
+finished ops: 620000
+finished ops: 620000
+
+finished ops: 620000
+
+
+
+finished ops: 610000
+
+
+finished ops: 620000
+finished ops: 620000
+
+
+# Transaction throughput (KTPS)
+softdb	workloads/workloadc.spec	16	778.961
+run time: 1.28376e+07us
+
+
+Read ops： 9859405
+Total read time: 199.19s
+Time per read: 0.020203ms
+Insert ops: 0
+Total insert time: 0s
+Time per insert: -nanms
+Scan ops: 0
+Total scan time: 0s
+Time per scan: -nanms
+
+
+./ycsbc -db leveldb -dbfilename /dev/shm/leveldb -threads 16 -P workloads/workloadc.spec
+zipfian const: 0.99
+Loads data Phase
+loading 625000 records...
+loading loading loading 625000 records...loading loading 625000 records...finished ops: 0loading loading 625000loading 
+finished ops: 0loading 625000loading 625000625000 records... records...loading 625000 records...
+ records...s: 0
+finished ops: loading 
+finished ops: 0loading 625000 records...625000 records...
+finished ops: 0
+625000 records...
+finished ops: 0
+ records...s: 0
+
+loading 625000 records...
+loading 625000 records...
+ records...s: 0
+625000625000 records...
+ records...s: 00
+finished ops: 620000ed ops: 580000350000finished ops: 310000
+
+# Loading records:	10000000
+Load time: 598.128s
+Read ops： 0
+Total read time: 0s
+Time per read: -nanms
+Insert ops: 0
+Total insert time: 0s
+Time per insert: -nanms
+Scan ops: 0
+Total scan time: 0s
+Time per scan: -nanms
+============================leveldb statistics===========================
+                               Compactions
+Level  Files Size(MB) Time(sec) Read(MB) Write(MB)
+--------------------------------------------------
+  0       12      773        55        0     39480
+  1        1       32        52    38737     38803
+  2       11      353        65    40298     40364
+  3      160     3642       220   149831    149838
+  4      965    29977       167   128591    128593
+  5      153     4843         0        0         0
+
+
+
+zipfian const: 0.99
+Performs transactions Phase
+running on running on 625000 records...
+finished ops: 0running on running on 625000 records...
+running on 625000 records...
+625000 records...
+running on 625000 records...ning on running on 
+625000 records...running on 625000 records...
+625000 records...
+running on 625000 records...
+finished ops: 00625000running on 625000 records...
+running on 625000625000 records...
+ records...s: 0
+ records...running on  on running on 
+625000 records...
+finished ops: 0625000 records...
+finished ops: 0
+finished ops: 0
+finished ops: 620000ed ops: 40000
+
+# Transaction throughput (KTPS)
+leveldb	workloads/workloadc.spec	16	101.983
+run time: 9.80556e+07us
+
+
+Read ops： 9920424
+Total read time: 1550.35s
+Time per read: 0.156278ms
+Insert ops: 0
+Total insert time: 0s
+Time per insert: -nanms
+Scan ops: 0
+Total scan time: 0s
+Time per scan: -nanms
+============================leveldb statistics===========================
+                               Compactions
+Level  Files Size(MB) Time(sec) Read(MB) Write(MB)
+--------------------------------------------------
+  0        0        0        55        0     39480
+  1        0        0        53    39510     39576
+  2        4      129        67    40972     41037
+  3      101     1564       227   152666    152673
+  4      510    15605       252   152669    152671
+  5      714    22321         0        0         0
+
+
 
 
 
