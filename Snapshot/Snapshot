@@ -41,3 +41,68 @@ readrandom   :      41.496 micros/op; (500000 of 500000 found)
 readseq      :       5.178 micros/op;  766.2 MB/s    
 readreverse  :       7.360 micros/op;  539.0 MB/s    
 
+
+
+~/github/so*/b*/db_bench --threads=4 --num=500000 --value_size=16384 --db=/dev/shm/softdbtest --benchmarks=fillseq,snapshot,overwrite,overwrite,overwrite,readrandom,readrandom,readmissing,readrandomsnapshot,readseq,readseqsnapshot,readreverse,readreversesnapshot  --write_buffer_size=67108864
+SoftDB:    version 1.20
+Date:       Sat May 18 15:57:48 2019
+CPU:        16 * Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
+CPUCache:   20480 KB
+Keys:       16 bytes each
+Values:     16384 bytes each (8192 bytes after compression)
+Entries:    500000
+RawSize:    7820.1 MB (estimated)
+FileSize:   3913.9 MB (estimated)
+WARNING: Snappy compression is not enabled
+------------------------------------------------
+fillseq      :     136.998 micros/op;  456.1 MB/s    
+overwrite    :     136.525 micros/op;  457.3 MB/s    
+overwrite    :     138.366 micros/op;  451.6 MB/s    
+overwrite    :     139.333 micros/op;  448.2 MB/s    
+readrandom   :       9.843 micros/op; (500000 of 500000 found)
+readrandom   :       5.795 micros/op; (500000 of 500000 found)
+readmissing  :       2.287 micros/op;                
+readrandomsnapshot :       6.531 micros/op; (500000 of 500000 found)
+readseq      :       2.792 micros/op; 22408.1 MB/s   
+readseqsnapshot :       2.627 micros/op; 23811.0 MB/s
+readreverse  :      25.892 micros/op; 2416.2 MB/s    
+readreversesnapshot :       4.544 micros/op; 13767.8 MB/s
+
+
+
+~/github/ll*/b*/db_bench --threads=4 --num=500000 --value_size=16384 --db=/dev/shm/leveldbtest --benchmarks=fillseq,snapshot,overwrite,overwrite,overwrite,readrandom,readrandom,readmissing,readrandomsnapshot,readseq,readseqsnapshot,readreverse,readreversesnapshot  --write_buffer_size=67108864 --cache_size=134217728 --max_file_size=33554432
+LevelDB:    version 1.20
+Date:       Sat May 18 16:03:50 2019
+CPU:        16 * Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
+CPUCache:   20480 KB
+Keys:       16 bytes each
+Values:     16384 bytes each (8192 bytes after compression)
+Entries:    500000
+RawSize:    7820.1 MB (estimated)
+FileSize:   3913.9 MB (estimated)
+WARNING: Snappy compression is not enabled
+------------------------------------------------
+fillseq      :     148.998 micros/op;  419.7 MB/s    
+overwrite    :     736.599 micros/op;   84.8 MB/s    
+overwrite    :     954.348 micros/op;   65.5 MB/s    
+overwrite    :    1014.905 micros/op;   61.6 MB/s    
+readrandom   :      41.670 micros/op; (500000 of 500000 found)
+readrandom   :      43.008 micros/op; (500000 of 500000 found)
+readmissing  :     148.968 micros/op;                
+readrandomsnapshot :     120.201 micros/op; (500000 of 500000 found)
+readseq      :      29.755 micros/op; 2102.4 MB/s    
+readseqsnapshot :      31.431 micros/op; 1990.4 MB/s 
+readreverse  :      51.796 micros/op; 1207.8 MB/s    
+readreversesnapshot :      32.374 micros/op; 1932.3 MB/s
+
+
+
+
+
+
+
+
+
+
+
+
