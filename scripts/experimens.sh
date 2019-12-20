@@ -7,12 +7,18 @@ if [ ! -d $var ]; then
     mkdir -p $var
 fi
 done
-} 
+}
+
+testAndTouch() {
+if [ ! -f $1 ]; then
+    touch $1
+fi
+}
 
 # make sure you have db* files under ~/github, 
 # and execute cmake -DCMAKE_BUILD_TYPE=Release .. && cmake --build . 
 # in each ~/github/db*/build/ .
-# Sudo cmake install is needed for ycsb.
+# sudo cmake install is needed for ycsb.
 dbs=("softdb" "leveldb")
 parent_path="~/github/"
 exe_file="/build/db_bench"
@@ -28,14 +34,14 @@ ycsb=$profiles"/YCSB/"
 
 for db in ${dbs[@]}
 do
-echo $db
+#echo $db
 testAndMkdir $small_value$db $large_value$db $large_dataset$db $snapshot$db $ycsb$db
 done
 
 # Bytes(32GB)
 data_size=34359738368
 # Bytes(160GB/Value Size:4KB)
-large_dataset=171798691840
+large_data_size=171798691840
 
 
 db_bench="fillseq,fillrandom,overwrite,readrandom,readmissing,readseq,readreverse,seekrandom"
@@ -47,12 +53,16 @@ large_value_size=(1024 2048 4096 8192 16384 32768 65536) # 1K 2K 4K 8K 16K 32K 6
 
 # while value_size >= 16K, we set write_buffer_size larger to reduce write stall.
 # For leveldb, default setting : SStable file size(2M), buffer size(4M), cache size(8M)
+vs_threshold=16384
 max_file_size=33554432 #32M
 write_buffer_size=67108864 #64M
 cache_size=134217728 #128M
+special_setting=" --max_file_size="${max_file_size}" --write_buffer_size="${write_buffer_size}" --cache_size="${cache_size}
+#echo $special_setting
 
 seat="/dev/shm/"
 
+# small value size db_bench
 for vs in ${small_value_size[@]}
 do
 num=$((data_size/vs))
@@ -61,31 +71,55 @@ for db in ${dbs[@]}
 do
 output=${small_value}${db}"/"${db}"_value_size_"${vs}
 #echo $output
+testAndTouch $output
 for th in ${threads[@]}
 do
-#echo ${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench}
-${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench} >> output
+echo ${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench}
+#${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench} >> output
 rm -rf ${seat}${db}
 #echo ${seat}${db}
 done
 done
 done
 
+# large value size db_bench
 for vs in ${large_value_size[@]}
 do
 num=$((data_size/vs))
 #echo $num
+plus=""
+if [ $vs -ge $vs_threshold ]; then
+    plus=$special_setting
+fi
 for db in ${dbs[@]}
 do
-ouput=${large_value}${db}"/"${db}"_value_size"${vs}
-#echo $outpupt
+output=${large_value}${db}"/"${db}"_value_size_"${vs}
+#echo $output
+testAndTouch $output
 for th in ${threads[@]}
 do
-#echo ${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench}
-${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench} >> output
+echo ${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench}${plus}
+#${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench}${plus} >> output
+rm -rf ${seat}${db}
+#echo ${seat}${db}
 done
 done
 done
 
+unset output
+# Large DataSet
+vs=4096
+num=$((large_data_size/vs))
+for db in ${dbs[@]}
+do
+output=${large_dataset}${db}"/"${db}"_value_size_"${vs}
+#echo $output
+testAndTouch $output
+th=1
+echo ${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench}
+#${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench} >> output
+rm -rf ${seat}${db}
+#echo ${seat}${db}
+done
 
 
