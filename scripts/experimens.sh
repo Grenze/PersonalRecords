@@ -35,12 +35,12 @@ snapshot=$profiles"/Snapshot/"
 cuckoo_filter=$profiles"/UseCuckooFilter/"
 ycsb=$profiles"/YCSB/"
 
-small_value_flag=1
+small_value_flag=0
 large_value_flag=0
 large_dataset_flag=0
 snapshot_flag=0
-cuckoo_filter_flag=0
-ycsb_flag=0
+cuckoo_filter_flag=1
+ycsb_flag=1
 
 for db in ${dbs[@]}
 do
@@ -77,6 +77,9 @@ if [ $small_value_flag -eq 1 ]; then
 for vs in ${small_value_size[@]}
 do
 num=$((data_size/vs))
+if [ $vs -eq 16 ]; then # overflow
+num=$(($((data_size-16))/vs))
+fi
 #echo $num
 for db in ${dbs[@]}
 do
@@ -87,7 +90,8 @@ for th in ${threads[@]}
 do
 echo ${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench}
 exe_str=${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench}
-$exe_str >> output
+nohup $exe_str >> $output &
+wait $!
 rm -rf ${seat}${db}
 #echo ${seat}${db}
 done
@@ -114,7 +118,8 @@ for th in ${threads[@]}
 do
 echo ${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench}${plus}
 exe_str=${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench}${plus}
-$exe_str >> output
+nohup $exe_str >> $output &
+wait $!
 rm -rf ${seat}${db}
 #echo ${seat}${db}
 done
@@ -139,7 +144,8 @@ testAndTouch $output
 th=1
 echo ${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench}${plus}
 exe_str=${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench}${plus}
-$exe_str >> output
+nohup $exe_str >> $output &
+wait $!
 rm -rf ${seat}${db}
 #echo ${seat}${db}
 done
@@ -163,7 +169,8 @@ testAndTouch $output
 th=1
 echo ${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench_snap}${plus}
 exe_str=${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench_snap}${plus}
-$exe_str >> output
+nohup $exe_str >> $output &
+wait $!
 rm -rf ${seat}${db}
 #echo ${seat}${db}
 done
@@ -188,7 +195,8 @@ for th in ${threads[@]}
 do
 echo ${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench_filter}${plus}
 exe_str=${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench_filter}${plus}
-$exe_str >> output
+nohup $exe_str >> $output &
+wait $!
 rm -rf ${seat}${db}
 #echo ${seat}${db}
 done
