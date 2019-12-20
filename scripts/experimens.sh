@@ -35,10 +35,10 @@ snapshot=$profiles"/Snapshot/"
 cuckoo_filter=$profiles"/UseCuckooFilter/"
 ycsb=$profiles"/YCSB/"
 
-small_value_flag=0
-large_value_flag=0
-large_dataset_flag=0
-snapshot_flag=0
+small_value_flag=1
+large_value_flag=1
+large_dataset_flag=1
+snapshot_flag=1
 cuckoo_filter_flag=1
 ycsb_flag=1
 
@@ -48,6 +48,8 @@ do
 testAndMkdir $small_value$db $large_value$db $large_dataset$db $snapshot$db $ycsb$db
 done
 
+# Bytes(16GB)
+small_data_size=17179869184
 # Bytes(32GB)
 data_size=34359738368
 # Bytes(160GB/Value Size:16KB)
@@ -76,10 +78,10 @@ seat="/dev/shm/"
 if [ $small_value_flag -eq 1 ]; then
 for vs in ${small_value_size[@]}
 do
-num=$((data_size/vs))
-if [ $vs -eq 16 ]; then # overflow
-num=$(($((data_size-16))/vs))
-fi
+num=$((small_data_size/vs))
+#if [ $vs -eq 16 ]; then # overflow
+#num=$(($((data_size-16))/vs))
+#fi
 #echo $num
 for db in ${dbs[@]}
 do
