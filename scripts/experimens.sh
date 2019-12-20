@@ -32,6 +32,13 @@ snapshot=$profiles"/Snapshot/"
 cuckoo_filter=$profiles"/UseCuckooFilter/"
 ycsb=$profiles"/YCSB/"
 
+small_value_flag=true
+large_value_flag=true
+large_dataset_flag=true
+snapshot_flag=true
+cuckoo_filter_flag=true
+ycsb_flag=true
+
 for db in ${dbs[@]}
 do
 #echo $db
@@ -40,7 +47,7 @@ done
 
 # Bytes(32GB)
 data_size=34359738368
-# Bytes(160GB/Value Size:4KB)
+# Bytes(160GB/Value Size:16KB)
 large_data_size=171798691840
 
 
@@ -63,6 +70,7 @@ special_setting=" --max_file_size="${max_file_size}" --write_buffer_size="${writ
 seat="/dev/shm/"
 
 # small value size db_bench
+if [ $small_value_flag ]; then
 for vs in ${small_value_size[@]}
 do
 num=$((data_size/vs))
@@ -81,8 +89,10 @@ rm -rf ${seat}${db}
 done
 done
 done
+fi
 
 # large value size db_bench
+if [ $large_value_flag ]; then
 for vs in ${large_value_size[@]}
 do
 num=$((data_size/vs))
@@ -105,21 +115,73 @@ rm -rf ${seat}${db}
 done
 done
 done
+fi
 
-unset output
 # Large DataSet
-vs=4096
+if [ $large_dataset_flag ]; then
+vs=16384
 num=$((large_data_size/vs))
+#echo $num
+plus=""
+if [ $vs -ge $vs_threshold ]; then
+    plus=$special_setting
+fi
 for db in ${dbs[@]}
 do
 output=${large_dataset}${db}"/"${db}"_value_size_"${vs}
 #echo $output
 testAndTouch $output
 th=1
-echo ${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench}
-#${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench} >> output
+echo ${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench}${plus}
+#${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench}${plus} >> output
 rm -rf ${seat}${db}
 #echo ${seat}${db}
 done
+fi
 
+# Snapshot
+if [ $snapshot_flag ]; then
+db_bench_snap="fillseq,snapshot,overwrite,overwrite,overwrite,readrandom,readmissing,readrandomsnapshot,readseq,readseqsnapshot,readreverse,readreversesnapshot,seekrandom,seekrandomsnapshot"
+vs=16384
+num=$((data_size/vs))
+#echo $num
+plus=""
+if [ $vs -ge $vs_threshold ]; then
+    plus=$special_setting
+fi
+for db in ${dbs[@]}
+do
+output=${snapshot}${db}"/"${db}"_value_size_"${vs}
+#echo $output
+testAndTouch $output
+th=1
+echo ${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench_snap}${plus}
+#${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench_snap}${plus} >> output
+rm -rf ${seat}${db}
+#echo ${seat}${db}
+done
+fi
 
+# Cuckoo Filter
+if [ $cuckoo_filter_flag ]; then
+db_bench_filter=${db_bench}" --use_cuckoo=0"
+vs=16384
+num=$((data_size/vs))
+#echo $num
+plus=""
+if [ $vs -ge $vs_threshold ]; then
+    plus=$special_setting
+fi
+db="softdb"
+output=${cuckoo_filter}${db}"/"${db}"_value_size_"${vs}
+#echo $output
+testAndMkdir $cuckoo_filter$db
+testAndTouch $output
+for th in ${threads[@]}
+do
+echo ${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench_filter}${plus}
+#${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench_filter}${plus} >> output
+rm -rf ${seat}${db}
+#echo ${seat}${db}
+done
+fi
