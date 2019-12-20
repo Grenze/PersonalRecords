@@ -48,8 +48,8 @@ do
 testAndMkdir $small_value$db $large_value$db $large_dataset$db $snapshot$db $ycsb$db
 done
 
-# Bytes(16GB)
-small_data_size=17179869184
+# Bytes(8GB)
+small_data_size=8589934592
 # Bytes(32GB)
 data_size=34359738368
 # Bytes(160GB/Value Size:16KB)
