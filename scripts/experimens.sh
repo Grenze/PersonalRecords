@@ -48,8 +48,10 @@ do
 testAndMkdir $small_value$db $large_value$db $large_dataset$db $snapshot$db $ycsb$db
 done
 
-# Bytes(8GB)
-small_data_size=8589934592
+# 2^27
+small_data_num=134217728
+# Bytes(1GB)
+small_data_size=1073741824
 # Bytes(32GB)
 data_size=34359738368
 # Bytes(160GB/Value Size:16KB)
@@ -78,7 +80,8 @@ seat="/dev/shm/"
 if [ $small_value_flag -eq 1 ]; then
 for vs in ${small_value_size[@]}
 do
-num=$((small_data_size/vs))
+num=$small_data_num
+#num=$((small_data_size/vs))
 #if [ $vs -eq 16 ]; then # overflow
 #num=$(($((data_size-16))/vs))
 #fi
