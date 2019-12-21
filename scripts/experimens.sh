@@ -22,7 +22,7 @@ user_name=$1
 # and execute cmake -DCMAKE_BUILD_TYPE=Release .. && cmake --build . 
 # in each ~/github/db*/build/ .
 # sudo cmake install is needed for ycsb.
-dbs=("softdb" "leveldb")
+dbs=("leveldb" "softdb")
 parent_path="/home/"${user_name}"/github/"
 exe_file="/build/db_bench"
 profiles="./profiles"
@@ -48,8 +48,8 @@ do
 testAndMkdir $small_value$db $large_value$db $large_dataset$db $snapshot$db $ycsb$db
 done
 
-# 2^27
-small_data_num=134217728
+# 2^24
+small_data_num=16777216
 # Bytes(1GB)
 small_data_size=1073741824
 # Bytes(32GB)
@@ -65,9 +65,9 @@ threads=(1 2 4 8 12 16)
 small_value_size=(16 32 64 128 256 512)
 large_value_size=(1024 2048 4096 8192 16384 32768 65536) # 1K 2K 4K 8K 16K 32K 64K
 
-# while value_size >= 16K, we set write_buffer_size larger to reduce write stall.
+# while value_size >= 8K, we set write_buffer_size larger to reduce write stall.
 # For leveldb, default setting : SStable file size(2M), buffer size(4M), cache size(8M)
-vs_threshold=16384
+vs_threshold=8192
 max_file_size=33554432 #32M
 write_buffer_size=67108864 #64M
 cache_size=134217728 #128M
