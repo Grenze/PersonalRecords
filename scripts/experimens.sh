@@ -12,9 +12,9 @@ done
 testAndTouch() {
 if [ ! -f $1 ]; then
     touch $1
-    return "todo"
+    return 1
 else
-    return "done"
+    return 0
 fi
 }
 
@@ -94,7 +94,7 @@ do
 output=${small_value}${db}"/"${db}"_value_size_"${vs}
 #echo $output
 testAndTouch $output
-if [ $? = "todo" ]; then
+if [ $? -eq 1 ]; then
 for th in ${threads[@]}
 do
 echo ${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench}
@@ -124,7 +124,7 @@ do
 output=${large_value}${db}"/"${db}"_value_size_"${vs}
 #echo $output
 testAndTouch $output
-if [ $? = "todo" ]; then
+if [ $? -eq 1 ]; then
 for th in ${threads[@]}
 do
 echo ${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench}${plus}
@@ -153,7 +153,7 @@ do
 output=${large_dataset}${db}"/"${db}"_value_size_"${vs}
 #echo $output
 testAndTouch $output
-if [ $? = "todo" ]; then
+if [ $? -eq 1 ]; then
 th=1
 echo ${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench}${plus}
 exe_str=${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench}${plus}
@@ -180,7 +180,7 @@ do
 output=${snapshot}${db}"/"${db}"_value_size_"${vs}
 #echo $output
 testAndTouch $output
-if [ $? = "todo" ]; then
+if [ $? -eq 1 ]; then
 th=1
 echo ${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench_snap}${plus}
 exe_str=${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench_snap}${plus}
@@ -207,7 +207,7 @@ output=${cuckoo_filter}${db}"/"${db}"_value_size_"${vs}
 #echo $output
 testAndMkdir $cuckoo_filter$db
 testAndTouch $output
-if [ $? = "todo" ]; then
+if [ $? -eq 1 ]; then
 for th in ${threads[@]}
 do
 echo ${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench_filter}${plus}
