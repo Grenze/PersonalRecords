@@ -51,14 +51,15 @@ do
 testAndMkdir $value_size_results$db $large_dataset$db $snapshot$db $ycsb$db
 done
 
-# Bytes(32GB)
-data_size=34359738368
+# Bytes(16GB)
+data_size=17179869184
 # Bytes(160GB/Value Size:16KB)
 large_data_size=171798691840
 
 db_bench="fillseq,fillrandom,overwrite,readrandom,readmissing,readseq,readreverse,seekrandom"
 
-threads=(1 2 4 8 16)
+#threads=(1 2 4 8 16)
+threads=( 1 )
 
 value_size=(1024 4096 16384 65536 262144) # 1K 4K 16K 64K 256K
 
