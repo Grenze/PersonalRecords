@@ -31,42 +31,36 @@ exe_file="/build/db_bench"
 profiles="./profiles"
 
 # directory for various benchmark
-small_value=$profiles"/SmallValueSizeBenchmark/"
-large_value=$profiles"/LargeValueSizeBenchmark/"
+value_size_results=$profiles"/ValueSizeBenchmark/"
 large_dataset=$profiles"/LargeDataSet/"
 snapshot=$profiles"/Snapshot/"
 cuckoo_filter=$profiles"/UseCuckooFilter/"
 ycsb=$profiles"/YCSB/"
 
-small_value_flag=1
-large_value_flag=1
+# whether do it or not
+value_size_flag=1
 large_dataset_flag=1
 snapshot_flag=1
 cuckoo_filter_flag=1
 ycsb_flag=1
 
+# mkdirs
 for db in ${dbs[@]}
 do
 #echo $db
-testAndMkdir $small_value$db $large_value$db $large_dataset$db $snapshot$db $ycsb$db
+testAndMkdir $value_size_results$db $large_dataset$db $snapshot$db $ycsb$db
 done
 
-# 2^23
-small_data_num=8388608
-# Bytes(1GB)
-small_data_size=1073741824
 # Bytes(32GB)
 data_size=34359738368
 # Bytes(160GB/Value Size:16KB)
 large_data_size=171798691840
 
-
 db_bench="fillseq,fillrandom,overwrite,readrandom,readmissing,readseq,readreverse,seekrandom"
 
-threads=(1 2 4 8 12 16)
+threads=(1 2 4 8 16)
 
-small_value_size=(16 32 64 128 256 512)
-large_value_size=(1024 2048 4096 8192 16384 32768 65536) # 1K 2K 4K 8K 16K 32K 64K
+value_size=(1024 4096 16384 65536 262144) # 1K 4K 16K 64K 256K
 
 # while value_size >= 8K, we set write_buffer_size larger to reduce write stall.
 # For leveldb, default setting : SStable file size(2M), buffer size(4M), cache size(8M)
@@ -79,39 +73,10 @@ special_setting=" --max_file_size="${max_file_size}" --write_buffer_size="${writ
 
 seat="/dev/shm/"
 
-# small value size db_bench
-if [ $small_value_flag -eq 1 ]; then
-for vs in ${small_value_size[@]}
-do
-num=$small_data_num
-#num=$((small_data_size/vs))
-#if [ $vs -eq 16 ]; then # overflow
-#num=$(($((data_size-16))/vs))
-#fi
-#echo $num
-for db in ${dbs[@]}
-do
-output=${small_value}${db}"/"${db}"_value_size_"${vs}
-#echo $output
-testAndTouch $output
-if [ $? -eq 1 ]; then
-for th in ${threads[@]}
-do
-echo ${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench}
-exe_str=${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench}
-nohup $exe_str >> $output &
-wait $!
-rm -rf ${seat}${db}
-#echo ${seat}${db}
-done
-fi
-done
-done
-fi
 
-# large value size db_bench
-if [ $large_value_flag -eq 1 ]; then
-for vs in ${large_value_size[@]}
+# value size db_bench
+if [ $value_size_flag -eq 1 ]; then
+for vs in ${value_size[@]}
 do
 num=$((data_size/vs))
 #echo $num
@@ -121,7 +86,7 @@ if [ $vs -ge $vs_threshold ]; then
 fi
 for db in ${dbs[@]}
 do
-output=${large_value}${db}"/"${db}"_value_size_"${vs}
+output=${value_size_results}${db}"/"${db}"_value_size_"${vs}
 #echo $output
 testAndTouch $output
 if [ $? -eq 1 ]; then
