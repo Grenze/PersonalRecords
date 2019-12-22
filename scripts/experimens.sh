@@ -12,6 +12,9 @@ done
 testAndTouch() {
 if [ ! -f $1 ]; then
     touch $1
+    return "todo"
+else
+    return "done"
 fi
 }
 
@@ -48,8 +51,8 @@ do
 testAndMkdir $small_value$db $large_value$db $large_dataset$db $snapshot$db $ycsb$db
 done
 
-# 2^24
-small_data_num=16777216
+# 2^23
+small_data_num=8388608
 # Bytes(1GB)
 small_data_size=1073741824
 # Bytes(32GB)
@@ -91,6 +94,7 @@ do
 output=${small_value}${db}"/"${db}"_value_size_"${vs}
 #echo $output
 testAndTouch $output
+if [ $? = "todo" ]; then
 for th in ${threads[@]}
 do
 echo ${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench}
@@ -100,6 +104,7 @@ wait $!
 rm -rf ${seat}${db}
 #echo ${seat}${db}
 done
+fi
 done
 done
 fi
@@ -119,6 +124,7 @@ do
 output=${large_value}${db}"/"${db}"_value_size_"${vs}
 #echo $output
 testAndTouch $output
+if [ $? = "todo" ]; then
 for th in ${threads[@]}
 do
 echo ${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench}${plus}
@@ -128,6 +134,7 @@ wait $!
 rm -rf ${seat}${db}
 #echo ${seat}${db}
 done
+fi
 done
 done
 fi
@@ -146,6 +153,7 @@ do
 output=${large_dataset}${db}"/"${db}"_value_size_"${vs}
 #echo $output
 testAndTouch $output
+if [ $? = "todo" ]; then
 th=1
 echo ${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench}${plus}
 exe_str=${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench}${plus}
@@ -153,6 +161,7 @@ nohup $exe_str >> $output &
 wait $!
 rm -rf ${seat}${db}
 #echo ${seat}${db}
+fi
 done
 fi
 
@@ -171,6 +180,7 @@ do
 output=${snapshot}${db}"/"${db}"_value_size_"${vs}
 #echo $output
 testAndTouch $output
+if [ $? = "todo" ]; then
 th=1
 echo ${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench_snap}${plus}
 exe_str=${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench_snap}${plus}
@@ -178,6 +188,7 @@ nohup $exe_str >> $output &
 wait $!
 rm -rf ${seat}${db}
 #echo ${seat}${db}
+fi
 done
 fi
 
@@ -196,6 +207,7 @@ output=${cuckoo_filter}${db}"/"${db}"_value_size_"${vs}
 #echo $output
 testAndMkdir $cuckoo_filter$db
 testAndTouch $output
+if [ $? = "todo" ]; then
 for th in ${threads[@]}
 do
 echo ${parent_path}${db}${exe_file}" --threads="${th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench_filter}${plus}
@@ -205,4 +217,5 @@ wait $!
 rm -rf ${seat}${db}
 #echo ${seat}${db}
 done
+fi
 fi
