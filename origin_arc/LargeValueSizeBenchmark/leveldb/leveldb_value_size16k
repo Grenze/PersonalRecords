@@ -1,0 +1,224 @@
+
+~/github/ll*/b*/db_bench --threads=16 --num=500000 --value_size=16384 --db=/dev/shm/leveldbtest --benchmarks=fillseq,fillsync,fillrandom,overwrite,readrandom,readmissing,readseq,readreverse,seekrandom --write_buffer_size=67108864
+LevelDB:    version 1.20
+Date:       Wed May  8 20:48:22 2019
+CPU:        16 * Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
+CPUCache:   20480 KB
+Keys:       16 bytes each
+Values:     16384 bytes each (8192 bytes after compression)
+Entries:    500000
+RawSize:    7820.1 MB (estimated)
+FileSize:   3913.9 MB (estimated)
+WARNING: Snappy compression is not enabled
+------------------------------------------------
+fillseq      :     722.828 micros/op;  346.2 MB/s    
+fillsync     :     653.397 micros/op;  376.0 MB/s (500 ops)
+fillrandom   :    3032.056 micros/op;   82.5 MB/s    
+overwrite    :    3195.255 micros/op;   78.3 MB/s    
+readrandom   :     500.714 micros/op; (500000 of 500000 found)
+readmissing  :     380.581 micros/op;                
+readseq      :       7.537 micros/op; 33200.9 MB/s   
+readreverse  :       8.164 micros/op; 30645.6 MB/s   
+seekrandom   :     393.863 micros/op; (500000 of 500000 found)
+
+~/github/ll*/b*/db_bench --threads=12 --num=500000 --value_size=16384 --db=/dev/shm/leveldbtest --benchmarks=fillseq,fillsync,fillrandom,overwrite,readrandom,readmissing,readseq,readreverse,seekrandom --write_buffer_size=67108864
+LevelDB:    version 1.20
+Date:       Wed May  8 22:18:48 2019
+CPU:        16 * Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
+CPUCache:   20480 KB
+Keys:       16 bytes each
+Values:     16384 bytes each (8192 bytes after compression)
+Entries:    500000
+RawSize:    7820.1 MB (estimated)
+FileSize:   3913.9 MB (estimated)
+WARNING: Snappy compression is not enabled
+------------------------------------------------
+fillseq      :     544.706 micros/op;  344.4 MB/s    
+fillsync     :     532.458 micros/op;  349.7 MB/s (500 ops)
+fillrandom   :    2211.643 micros/op;   84.6 MB/s    
+overwrite    :    2378.421 micros/op;   78.8 MB/s    
+readrandom   :     359.339 micros/op; (500000 of 500000 found)
+readmissing  :     265.053 micros/op;                
+readseq      :       5.217 micros/op; 35972.2 MB/s   
+readreverse  :       5.662 micros/op; 33148.4 MB/s   
+seekrandom   :     265.422 micros/op; (500000 of 500000 found)
+
+~/github/ll*/b*/db_bench --threads=8 --num=500000 --value_size=16384 --db=/dev/shm/leveldbtest --benchmarks=fillseq,fillsync,fillrandom,overwrite,readrandom,readmissing,readseq,readreverse,seekrandom --write_buffer_size=67108864
+LevelDB:    version 1.20
+Date:       Wed May  8 23:11:20 2019
+CPU:        16 * Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
+CPUCache:   20480 KB
+Keys:       16 bytes each
+Values:     16384 bytes each (8192 bytes after compression)
+Entries:    500000
+RawSize:    7820.1 MB (estimated)
+FileSize:   3913.9 MB (estimated)
+WARNING: Snappy compression is not enabled
+------------------------------------------------
+fillseq      :     342.707 micros/op;  365.0 MB/s    
+fillsync     :     317.478 micros/op;  387.7 MB/s (500 ops)
+fillrandom   :    1423.103 micros/op;   87.9 MB/s    
+overwrite    :    1567.911 micros/op;   79.7 MB/s    
+readrandom   :     217.903 micros/op; (500000 of 500000 found)
+readmissing  :     139.744 micros/op;                
+readseq      :       4.767 micros/op; 26247.0 MB/s   
+readreverse  :       5.680 micros/op; 22028.0 MB/s   
+seekrandom   :     139.976 micros/op; (500000 of 500000 found)
+
+~/github/ll*/b*/db_bench --threads=4 --num=500000 --value_size=16384 --db=/dev/shm/leveldbtest --benchmarks=fillseq,fillsync,fillrandom,overwrite,readrandom,readmissing,readseq,readreverse,seekrandom --write_buffer_size=67108864
+LevelDB:    version 1.20
+Date:       Thu May  9 08:20:29 2019
+CPU:        16 * Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
+CPUCache:   20480 KB
+Keys:       16 bytes each
+Values:     16384 bytes each (8192 bytes after compression)
+Entries:    500000
+RawSize:    7820.1 MB (estimated)
+FileSize:   3913.9 MB (estimated)
+WARNING: Snappy compression is not enabled
+------------------------------------------------
+fillseq      :     164.824 micros/op;  379.1 MB/s    
+fillsync     :     145.690 micros/op;  423.6 MB/s (500 ops)
+fillrandom   :     636.257 micros/op;   98.3 MB/s    
+overwrite    :     777.073 micros/op;   79.7 MB/s    
+readrandom   :     107.343 micros/op; (500000 of 500000 found)
+readmissing  :      56.002 micros/op;                
+readseq      :       3.201 micros/op; 19544.3 MB/s   
+readreverse  :       4.219 micros/op; 14828.4 MB/s   
+seekrandom   :      58.228 micros/op; (500000 of 500000 found)
+
+~/github/ll*/b*/db_bench --threads=1 --num=500000 --value_size=16384 --db=/dev/shm/leveldbtest --benchmarks=fillseq,fillsync,fillrandom,overwrite,readrandom,readmissing,readseq,readreverse,seekrandom --write_buffer_size=67108864
+LevelDB:    version 1.20
+Date:       Thu May  9 08:37:51 2019
+CPU:        16 * Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
+CPUCache:   20480 KB
+Keys:       16 bytes each
+Values:     16384 bytes each (8192 bytes after compression)
+Entries:    500000
+RawSize:    7820.1 MB (estimated)
+FileSize:   3913.9 MB (estimated)
+WARNING: Snappy compression is not enabled
+------------------------------------------------
+fillseq      :      16.195 micros/op;  965.7 MB/s    
+fillsync     :      39.104 micros/op;  400.0 MB/s (500 ops)
+fillrandom   :      98.133 micros/op;  159.4 MB/s    
+overwrite    :     151.199 micros/op;  103.4 MB/s    
+readrandom   :      44.471 micros/op; (500000 of 500000 found)
+readmissing  :      21.145 micros/op;                
+readseq      :       1.636 micros/op; 9560.0 MB/s    
+readreverse  :       2.925 micros/op; 5346.3 MB/s    
+seekrandom   :      18.556 micros/op; (500000 of 500000 found)
+
+
+~/github/ll*/b*/db_bench --threads=16 --num=500000 --value_size=16384 --db=/dev/shm/leveldbtest --benchmarks=fillseq,fillsync,fillrandom,overwrite,readrandom,readmissing,readseq,readreverse,seekrandom --write_buffer_size=67108864 --cache_size=134217728 --max_file_size=33554432
+LevelDB:    version 1.20
+Date:       Thu May  9 09:52:04 2019
+CPU:        16 * Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
+CPUCache:   20480 KB
+Keys:       16 bytes each
+Values:     16384 bytes each (8192 bytes after compression)
+Entries:    500000
+RawSize:    7820.1 MB (estimated)
+FileSize:   3913.9 MB (estimated)
+WARNING: Snappy compression is not enabled
+------------------------------------------------
+fillseq      :     740.417 micros/op;  338.0 MB/s    
+fillsync     :     686.361 micros/op;  356.6 MB/s (500 ops)
+fillrandom   :    2333.090 micros/op;  107.3 MB/s    
+overwrite    :    2426.516 micros/op;  103.1 MB/s    
+readrandom   :      36.651 micros/op; (500000 of 500000 found)
+readmissing  :      15.714 micros/op;                
+readseq      :       1.777 micros/op; 133145.3 MB/s  
+readreverse  :       5.482 micros/op; 42762.2 MB/s   
+seekrandom   :      27.070 micros/op; (500000 of 500000 found)
+
+~/github/ll*/b*/db_bench --threads=12 --num=500000 --value_size=16384 --db=/dev/shm/leveldbtest --benchmarks=fillseq,fillsync,fillrandom,overwrite,readrandom,readmissing,readseq,readreverse,seekrandom --write_buffer_size=67108864 --cache_size=134217728 --max_file_size=33554432
+LevelDB:    version 1.20
+Date:       Thu May  9 10:45:49 2019
+CPU:        16 * Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
+CPUCache:   20480 KB
+Keys:       16 bytes each
+Values:     16384 bytes each (8192 bytes after compression)
+Entries:    500000
+RawSize:    7820.1 MB (estimated)
+FileSize:   3913.9 MB (estimated)
+WARNING: Snappy compression is not enabled
+------------------------------------------------
+fillseq      :     535.269 micros/op;  350.5 MB/s    
+fillsync     :     484.253 micros/op;  375.9 MB/s (500 ops)
+fillrandom   :    1710.773 micros/op;  109.3 MB/s    
+overwrite    :    1796.722 micros/op;  104.4 MB/s    
+readrandom   :      23.170 micros/op; (500000 of 500000 found)
+readmissing  :      13.310 micros/op;                
+readseq      :       1.516 micros/op; 114839.3 MB/s  
+readreverse  :       4.165 micros/op; 40468.1 MB/s   
+seekrandom   :      19.497 micros/op; (500000 of 500000 found)
+
+~/github/ll*/b*/db_bench --threads=8 --num=500000 --value_size=16384 --db=/dev/shm/leveldbtest --benchmarks=fillseq,fillsync,fillrandom,overwrite,readrandom,readmissing,readseq,readreverse,seekrandom --write_buffer_size=67108864 --cache_size=134217728 --max_file_size=33554432
+LevelDB:    version 1.20
+Date:       Thu May  9 11:22:37 2019
+CPU:        16 * Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
+CPUCache:   20480 KB
+Keys:       16 bytes each
+Values:     16384 bytes each (8192 bytes after compression)
+Entries:    500000
+RawSize:    7820.1 MB (estimated)
+FileSize:   3913.9 MB (estimated)
+WARNING: Snappy compression is not enabled
+------------------------------------------------
+fillseq      :     352.589 micros/op;  354.8 MB/s    
+fillsync     :     327.998 micros/op;  374.3 MB/s (500 ops)
+fillrandom   :    1112.052 micros/op;  112.4 MB/s    
+overwrite    :    1181.224 micros/op;  105.9 MB/s    
+readrandom   :      23.700 micros/op; (500000 of 500000 found)
+readmissing  :       9.016 micros/op;                
+readseq      :       1.131 micros/op; 89158.1 MB/s   
+readreverse  :       3.693 micros/op; 30714.5 MB/s   
+seekrandom   :      11.697 micros/op; (500000 of 500000 found)
+
+~/github/ll*/b*/db_bench --threads=4 --num=500000 --value_size=16384 --db=/dev/shm/leveldbtest --benchmarks=fillseq,fillsync,fillrandom,overwrite,readrandom,readmissing,readseq,readreverse,seekrandom --write_buffer_size=67108864 --cache_size=134217728 --max_file_size=33554432
+LevelDB:    version 1.20
+Date:       Thu May  9 11:45:42 2019
+CPU:        16 * Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
+CPUCache:   20480 KB
+Keys:       16 bytes each
+Values:     16384 bytes each (8192 bytes after compression)
+Entries:    500000
+RawSize:    7820.1 MB (estimated)
+FileSize:   3913.9 MB (estimated)
+WARNING: Snappy compression is not enabled
+------------------------------------------------
+fillseq      :     158.774 micros/op;  393.7 MB/s    
+fillsync     :     138.592 micros/op;  449.2 MB/s (500 ops)
+fillrandom   :     520.150 micros/op;  120.0 MB/s    
+overwrite    :     585.753 micros/op;  106.8 MB/s    
+readrandom   :      14.742 micros/op; (500000 of 500000 found)
+readmissing  :      11.037 micros/op;                
+readseq      :       0.978 micros/op; 63972.5 MB/s   
+readreverse  :       3.285 micros/op; 19042.8 MB/s   
+seekrandom   :       6.928 micros/op; (500000 of 500000 found)
+
+~/github/ll*/b*/db_bench --threads=1 --num=500000 --value_size=16384 --db=/dev/shm/leveldbtest --benchmarks=fillseq,fillsync,fillrandom,overwrite,readrandom,readmissing,readseq,readreverse,seekrandom --write_buffer_size=67108864 --cache_size=134217728 --max_file_size=33554432
+LevelDB:    version 1.20
+Date:       Thu May  9 12:03:20 2019
+CPU:        16 * Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
+CPUCache:   20480 KB
+Keys:       16 bytes each
+Values:     16384 bytes each (8192 bytes after compression)
+Entries:    500000
+RawSize:    7820.1 MB (estimated)
+FileSize:   3913.9 MB (estimated)
+WARNING: Snappy compression is not enabled
+------------------------------------------------
+fillseq      :      16.307 micros/op;  959.1 MB/s    
+fillsync     :      34.222 micros/op;  457.0 MB/s (500 ops)
+fillrandom   :      93.116 micros/op;  168.0 MB/s    
+overwrite    :     131.664 micros/op;  118.8 MB/s    
+readrandom   :       8.346 micros/op; (500000 of 500000 found)
+readmissing  :       5.474 micros/op;                
+readseq      :       0.909 micros/op; 17208.2 MB/s   
+readreverse  :       3.096 micros/op; 5051.7 MB/s    
+seekrandom   :       5.978 micros/op; (500000 of 500000 found)
+
+
+

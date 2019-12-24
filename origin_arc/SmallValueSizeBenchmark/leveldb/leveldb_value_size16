@@ -1,0 +1,188 @@
+
+./db_bench --threads=1 --num=1000000 --value_size=16 --db=/dev/shm/leveldbtest
+LevelDB:    version 1.20
+Date:       Tue Apr 30 10:36:30 2019
+CPU:        16 * Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
+CPUCache:   20480 KB
+Keys:       16 bytes each
+Values:     16 bytes each (8 bytes after compression)
+Entries:    1000000
+RawSize:    30.5 MB (estimated)
+FileSize:   22.9 MB (estimated)
+WARNING: Snappy compression is not enabled
+------------------------------------------------
+fillseq      :       1.377 micros/op;   22.2 MB/s     
+readwhilewriting :       4.710 micros/op; (1000000 of 1000000 found)
+fillsync     :      10.709 micros/op;    2.8 MB/s (1000 ops)
+fillrandom   :       1.697 micros/op;   18.0 MB/s     
+overwrite    :       1.732 micros/op;   17.6 MB/s     
+readrandom   :       2.022 micros/op; (1000000 of 1000000 found)
+readmissing  :       2.103 micros/op;                 
+readseq      :       0.141 micros/op;  216.8 MB/s    
+readreverse  :       0.300 micros/op;  101.7 MB/s    
+seekrandom   :       2.534 micros/op; (1000000 of 1000000 found)
+
+./db_bench --threads=2 --num=1000000 --value_size=16 --db=/dev/shm/leveldbtest
+LevelDB:    version 1.20
+Date:       Tue Apr 30 10:37:50 2019
+CPU:        16 * Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
+CPUCache:   20480 KB
+Keys:       16 bytes each
+Values:     16 bytes each (8 bytes after compression)
+Entries:    1000000
+RawSize:    30.5 MB (estimated)
+FileSize:   22.9 MB (estimated)
+WARNING: Snappy compression is not enabled
+------------------------------------------------
+fillseq      :       6.137 micros/op;    9.9 MB/s     
+readwhilewriting :       5.601 micros/op; (1000000 of 1000000 found)
+fillsync     :       9.953 micros/op;    4.7 MB/s (1000 ops)
+fillrandom   :       6.638 micros/op;    9.2 MB/s     
+overwrite    :       6.703 micros/op;    9.1 MB/s     
+readrandom   :       2.495 micros/op; (1000000 of 1000000 found)
+readmissing  :       2.494 micros/op;                 
+readseq      :       0.147 micros/op;  415.1 MB/s    
+readreverse  :       0.295 micros/op;  206.8 MB/s    
+seekrandom   :       2.980 micros/op; (1000000 of 1000000 found)
+
+./db_bench --threads=3 --num=1000000 --value_size=16 --db=/dev/shm/leveldbtest
+LevelDB:    version 1.20
+Date:       Tue Apr 30 10:47:56 2019
+CPU:        16 * Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
+CPUCache:   20480 KB
+Keys:       16 bytes each
+Values:     16 bytes each (8 bytes after compression)
+Entries:    1000000
+RawSize:    30.5 MB (estimated)
+FileSize:   22.9 MB (estimated)
+WARNING: Snappy compression is not enabled
+------------------------------------------------
+fillseq      :      11.306 micros/op;    8.1 MB/s     
+readwhilewriting :       5.661 micros/op; (1000000 of 1000000 found)
+fillsync     :      18.174 micros/op;    4.9 MB/s (1000 ops)
+fillrandom   :      12.401 micros/op;    7.4 MB/s     
+overwrite    :      12.185 micros/op;    7.5 MB/s     
+readrandom   :       3.074 micros/op; (1000000 of 1000000 found)
+readmissing  :       3.083 micros/op;                 
+readseq      :       0.165 micros/op;  556.2 MB/s    
+readreverse  :       0.303 micros/op;  302.5 MB/s    
+seekrandom   :       3.524 micros/op; (1000000 of 1000000 found)
+
+./db_bench --threads=4 --num=1000000 --value_size=16 --db=/dev/shm/leveldbtest
+LevelDB:    version 1.20
+Date:       Tue Apr 30 10:58:30 2019
+CPU:        16 * Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
+CPUCache:   20480 KB
+Keys:       16 bytes each
+Values:     16 bytes each (8 bytes after compression)
+Entries:    1000000
+RawSize:    30.5 MB (estimated)
+FileSize:   22.9 MB (estimated)
+WARNING: Snappy compression is not enabled
+------------------------------------------------
+fillseq      :      16.091 micros/op;    7.6 MB/s     
+readwhilewriting :       6.236 micros/op; (1000000 of 1000000 found)
+fillsync     :      18.709 micros/op;    5.6 MB/s (1000 ops)
+fillrandom   :      16.601 micros/op;    7.3 MB/s     
+overwrite    :      17.068 micros/op;    7.1 MB/s     
+readrandom   :       3.333 micros/op; (1000000 of 1000000 found)
+readmissing  :       3.422 micros/op;                 
+readseq      :       0.162 micros/op;  753.7 MB/s    
+readreverse  :       0.305 micros/op;  400.6 MB/s    
+seekrandom   :       3.899 micros/op; (1000000 of 1000000 found)
+
+./db_bench --threads=6 --num=1000000 --value_size=16 --db=/dev/shm/leveldbtest
+LevelDB:    version 1.20
+Date:       Tue Apr 30 11:00:16 2019
+CPU:        16 * Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
+CPUCache:   20480 KB
+Keys:       16 bytes each
+Values:     16 bytes each (8 bytes after compression)
+Entries:    1000000
+RawSize:    30.5 MB (estimated)
+FileSize:   22.9 MB (estimated)
+WARNING: Snappy compression is not enabled
+------------------------------------------------
+fillseq      :      29.341 micros/op;    6.2 MB/s     
+readwhilewriting :       7.202 micros/op; (1000000 of 1000000 found)
+fillsync     :      33.906 micros/op;    5.2 MB/s (1000 ops)
+fillrandom   :      30.963 micros/op;    5.9 MB/s     
+overwrite    :      31.526 micros/op;    5.8 MB/s     
+readrandom   :       4.497 micros/op; (1000000 of 1000000 found)
+readmissing  :       4.518 micros/op;                 
+readseq      :       0.191 micros/op;  642.2 MB/s    
+readreverse  :       0.330 micros/op;  552.4 MB/s    
+seekrandom   :       5.658 micros/op; (1000000 of 1000000 found)
+
+./db_bench --threads=8 --num=1000000 --value_size=16 --db=/dev/shm/leveldbtest
+LevelDB:    version 1.20
+Date:       Tue Apr 30 11:03:01 2019
+CPU:        16 * Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
+CPUCache:   20480 KB
+Keys:       16 bytes each
+Values:     16 bytes each (8 bytes after compression)
+Entries:    1000000
+RawSize:    30.5 MB (estimated)
+FileSize:   22.9 MB (estimated)
+WARNING: Snappy compression is not enabled
+------------------------------------------------
+fillseq      :      43.195 micros/op;    5.6 MB/s     
+readwhilewriting :       8.256 micros/op; (1000000 of 1000000 found)
+fillsync     :      40.180 micros/op;    5.7 MB/s (1000 ops)
+fillrandom   :      45.602 micros/op;    5.4 MB/s     
+overwrite    :      45.746 micros/op;    5.3 MB/s     
+readrandom   :       6.022 micros/op; (1000000 of 1000000 found)
+readmissing  :       5.964 micros/op;                 
+readseq      :       0.179 micros/op; 1359.7 MB/s    
+readreverse  :       0.349 micros/op;  645.0 MB/s    
+seekrandom   :       7.876 micros/op; (1000000 of 1000000 found)
+
+./db_bench --threads=12 --num=1000000 --value_size=16 --db=/dev/shm/leveldbtest
+LevelDB:    version 1.20
+Date:       Tue Apr 30 11:06:19 2019
+CPU:        16 * Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
+CPUCache:   20480 KB
+Keys:       16 bytes each
+Values:     16 bytes each (8 bytes after compression)
+Entries:    1000000
+RawSize:    30.5 MB (estimated)
+FileSize:   22.9 MB (estimated)
+WARNING: Snappy compression is not enabled
+------------------------------------------------
+fillseq      :      73.033 micros/op;    5.0 MB/s     
+readwhilewriting :      11.514 micros/op; (1000000 of 1000000 found)
+fillsync     :      64.012 micros/op;    5.4 MB/s (1000 ops)
+fillrandom   :      76.867 micros/op;    4.8 MB/s     
+overwrite    :      76.764 micros/op;    4.8 MB/s     
+readrandom   :       9.387 micros/op; (1000000 of 1000000 found)
+readmissing  :       9.486 micros/op;                 
+readseq      :       0.274 micros/op; 1121.3 MB/s    
+readreverse  :       0.477 micros/op;  656.3 MB/s    
+seekrandom   :      14.944 micros/op; (1000000 of 1000000 found)
+
+./db_bench --threads=16 --num=1000000 --value_size=16 --db=/dev/shm/leveldbtest
+LevelDB:    version 1.20
+Date:       Tue Apr 30 11:16:35 2019
+CPU:        16 * Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
+CPUCache:   20480 KB
+Keys:       16 bytes each
+Values:     16 bytes each (8 bytes after compression)
+Entries:    1000000
+RawSize:    30.5 MB (estimated)
+FileSize:   22.9 MB (estimated)
+WARNING: Snappy compression is not enabled
+------------------------------------------------
+fillseq      :     102.080 micros/op;    4.8 MB/s     
+readwhilewriting :      14.960 micros/op; (1000000 of 1000000 found)
+fillsync     :      85.617 micros/op;    5.4 MB/s (1000 ops)
+fillrandom   :     105.000 micros/op;    4.6 MB/s     
+overwrite    :     105.057 micros/op;    4.6 MB/s     
+readrandom   :      13.550 micros/op; (1000000 of 1000000 found)
+readmissing  :      13.429 micros/op;                 
+readseq      :       0.385 micros/op; 1256.6 MB/s     
+readreverse  :       0.688 micros/op;  692.8 MB/s     
+seekrandom   :      22.143 micros/op; (1000000 of 1000000 found)
+
+
+
+
