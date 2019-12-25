@@ -139,7 +139,7 @@ fi
 # Snapshot
 if [ $snapshot_flag -eq 1 ]; then
 echo "Snapshot Benchmark"
-db_bench_snap="fillseq,snapshot,overwrite,overwrite,overwrite,readrandom,readmissing,readrandomsnapshot,readseq,readseqsnapshot"
+db_bench_snap="fillseq,snapshot,overwrite,overwrite,overwrite,readrandom,readrandomsnapshot,readmissing,readmissingsnapshot,readseq,readseqsnapshot"
 vs=16384
 num=$((data_size/vs))
 #echo $num
