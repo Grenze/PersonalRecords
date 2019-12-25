@@ -39,7 +39,7 @@ ycsb=$profiles"/YCSB/"
 
 # whether do it or not
 value_size_flag=1
-large_dataset_flag=0
+large_dataset_flag=1
 snapshot_flag=1
 cuckoo_filter_flag=1
 ycsb_flag=1
@@ -56,20 +56,20 @@ data_size=17179869184
 # Bytes(160GB/Value Size:16KB)
 large_data_size=171798691840
 
-db_bench="fillseq,fillrandom,overwrite,readrandom,readmissing,readseq,readreverse,seekrandom"
+db_bench="fillrandom,overwrite,readrandom,readmissing,readseq"
 
 #threads=(1 2 4 8 16)
 threads=( 1 )
 
-value_size=(4096 16384 65536 262144)
-#value_size=(1024 4096 16384 65536 262144) # 1K 4K 16K 64K 256K
+#value_size=(4096 16384 65536 262144)
+value_size=(1024 4096 16384 65536 262144) # 1K 4K 16K 64K 256K
 
 # while value_size >= 8K, we set write_buffer_size larger to reduce write stall.
 # For leveldb, default setting : SStable file size(2M), buffer size(4M), cache size(8M)
 #vs_threshold=8192
 vs_threshold=1024
-max_file_size=2097152 #2M
-#max_file_size=33554432 #32M
+#max_file_size=2097152 #2M
+max_file_size=33554432 #32M
 write_buffer_size=67108864 #64M
 cache_size=134217728 #128M
 special_setting=" --max_file_size="${max_file_size}" --write_buffer_size="${write_buffer_size}" --cache_size="${cache_size}
@@ -139,7 +139,7 @@ fi
 # Snapshot
 if [ $snapshot_flag -eq 1 ]; then
 echo "Snapshot Benchmark"
-db_bench_snap="fillseq,snapshot,overwrite,overwrite,overwrite,readrandom,readmissing,readrandomsnapshot,readseq,readseqsnapshot,readreverse,readreversesnapshot,seekrandom,seekrandomsnapshot"
+db_bench_snap="fillseq,snapshot,overwrite,overwrite,overwrite,readrandom,readmissing,readrandomsnapshot,readseq,readseqsnapshot"
 vs=16384
 num=$((data_size/vs))
 #echo $num
