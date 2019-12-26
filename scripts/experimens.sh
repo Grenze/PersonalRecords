@@ -38,10 +38,10 @@ cuckoo_filter=$profiles"/UseCuckooFilter/"
 ycsb=$profiles"/YCSB/"
 
 # whether do it or not
-value_size_flag=1
-large_dataset_flag=1
-snapshot_flag=1
-cuckoo_filter_flag=1
+value_size_flag=0
+large_dataset_flag=0
+snapshot_flag=0
+cuckoo_filter_flag=0
 ycsb_flag=1
 
 # mkdirs
@@ -192,3 +192,37 @@ rm -rf ${seat}${db}
 done
 fi
 fi
+
+# YCSB
+# make sure databases are installed.
+# system parameter and experiment parameter are modified in benchmark directory, mainly under workloads directory and in *_db.cc files.
+
+exe_file="/home/"${user_name}"/benchmark/ycsbc"
+workloads_dir="/home/"${user_name}"/benchmark/workloads/"
+workloads=("workloada.spec" "workloadb.spec" "workloadc.spec" "workloadd.spec" "workloade.spec" "workloadf.spec")
+# records are distributed to threads.
+th=16
+# keep vs consistent with benchmarks.
+vs=65536
+if [ $ycsb_flag -eq 1 ]; then
+echo "YCSB Benchmark"
+for db in ${dbs[@]}
+do
+output=${ycsb}${db}"/"${db}"_value_size_"${vs}
+#echo $output
+testAndTouch $output
+if [ $? -eq 1 ]; then
+for workload in ${workloads[@]}
+do
+echo ${exe_file}" -db "${db}" -dbfilename "${seat}${db}" -threads "${th}" -P "${workloads_dir}${workload}
+exe_str=${exe_file}" -db "${db}" -dbfilename "${seat}${db}" -threads "${th}" -P "${workloads_dir}${workload}
+nohup $exe_str >> $output &
+wait $!
+rm -rf ${seat}${db}
+#echo ${seat}${db}
+done
+fi
+done
+fi
+
+
