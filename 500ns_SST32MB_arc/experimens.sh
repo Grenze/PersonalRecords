@@ -232,6 +232,8 @@ if [ $readwritemix_flag -eq 1 ]; then
 echo "Read Write Mix Benchmark"
 write_th=8
 th=16
+# 1G * 16 thread
+data_size=1073741824
 db_bench="fillrandom,readwhilewriting"
 for db in ${dbs[@]}
 do
