@@ -36,13 +36,15 @@ large_dataset=$profiles"/LargeDataSet/"
 snapshot=$profiles"/Snapshot/"
 cuckoo_filter=$profiles"/UseCuckooFilter/"
 ycsb=$profiles"/YCSB/"
+cache=$profiles"/Cache/"
 
 # whether do it or not
 value_size_flag=0
 large_dataset_flag=0
 snapshot_flag=0
 cuckoo_filter_flag=0
-ycsb_flag=1
+ycsb_flag=0
+cache_flag=1
 
 # mkdirs
 for db in ${dbs[@]}
@@ -225,4 +227,37 @@ fi
 done
 fi
 
+# leveldb db_bench cache analysis
+if [ $cache_flag -eq 1 ]; then
+echo "LevelDB Cache Analysis"
+testAndMkdir $cache
+db="leveldb"
+exe_file="/home/"${user_name}"/github/cache/lldb/build/db_bench"
+cache_value_size=(128 256 1024 4096 16384)
+write_threads=(0 2 4 6 8 10)
+# 128M
+cache_data_size=134217728
+db_bench="fillrandom,clearprofile,readwhilewriting,printprofile"
+# total threads number including write thread and read thread.
+th=10
+for vs in ${cache_value_size[@]}
+do
+num=$((cache_data_size/vs))
+#echo $num
+output=${cache}${db}"_value_size_"${vs}
+#echo $output
+testAndTouch $output
+if [ $? -eq 1 ]; then
+for write_th in ${write_threads[@]}
+do
+echo ${exe_file}" --threads="${th}" --write_threads="${write_th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench}
+exe_str=${exe_file}" --threads="${th}" --write_threads="${write_th}" --value_size="${vs}" --num="$num" --db="${seat}${db}" --benchmarks="${db_bench}
+nohup $exe_str >> $output &
+wait $!
+rm -rf ${seat}${db}
+#echo ${seat}${db}
+done
+fi
+done
+fi
 
