@@ -236,13 +236,14 @@ exe_file="/home/"${user_name}"/github/cache/lldb/build/db_bench"
 cache_value_size=(128 256 1024 4096 16384)
 write_threads=(0 2 4 6 8 10)
 # 128M
-cache_data_size=134217728
+#cache_data_size=134217728
 db_bench="fillrandom,clearprofile,readwhilewriting,printprofile"
 # total threads number including write thread and read thread.
 th=10
 for vs in ${cache_value_size[@]}
 do
-num=$((cache_data_size/vs))
+#num=$((cache_data_size/vs))
+num=1000000
 #echo $num
 output=${cache}${db}"_value_size_"${vs}
 #echo $output
