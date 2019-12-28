@@ -230,8 +230,8 @@ fi
 # read write mix benchmark
 if [ $readwritemix_flag -eq 1 ]; then
 echo "Read Write Mix Benchmark"
-write_th=8
-th=16
+write_th=5
+th=10
 # 16G
 data_size=17179869184
 db_bench="fillrandom,readwhilewriting"
