@@ -1,0 +1,115 @@
+
+~/github/softdb/build/db_bench --threads=16 --num=500000 --value_size=2048 --db=/dev/shm/softdbtest 
+SoftDB:    version 1.20
+Date:       Thu May  2 14:09:18 2019
+CPU:        16 * Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
+CPUCache:   20480 KB
+Keys:       16 bytes each
+Values:     2048 bytes each (1024 bytes after compression)
+Entries:    500000
+RawSize:    984.2 MB (estimated)
+FileSize:   495.9 MB (estimated)
+WARNING: Snappy compression is not enabled
+------------------------------------------------
+fillseq      :     170.316 micros/op;  184.8 MB/s    
+readwhilewriting :      19.363 micros/op; (500000 of 500000 found)
+fillsync     :     147.293 micros/op;  202.9 MB/s (500 ops)
+fillrandom   :     171.284 micros/op;  183.8 MB/s    
+overwrite    :     170.694 micros/op;  184.4 MB/s    
+readrandom   :      10.815 micros/op; (500000 of 500000 found)
+readmissing  :      10.985 micros/op;                
+readseq      :       0.316 micros/op; 97897.3 MB/s   
+readreverse  :       0.779 micros/op; 37455.3 MB/s   
+seekrandom   :      17.634 micros/op; (500000 of 500000 found)
+
+~/github/softdb/build/db_bench --threads=12 --num=500000 --value_size=2048 --db=/dev/shm/softdbtest 
+SoftDB:    version 1.20
+Date:       Thu May  2 14:15:33 2019
+CPU:        16 * Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
+CPUCache:   20480 KB
+Keys:       16 bytes each
+Values:     2048 bytes each (1024 bytes after compression)
+Entries:    500000
+RawSize:    984.2 MB (estimated)
+FileSize:   495.9 MB (estimated)
+WARNING: Snappy compression is not enabled
+------------------------------------------------
+fillseq      :     134.301 micros/op;  175.8 MB/s    
+readwhilewriting :      16.308 micros/op; (500000 of 500000 found)
+fillsync     :      94.776 micros/op;  221.6 MB/s (500 ops)
+fillrandom   :     135.317 micros/op;  174.5 MB/s    
+overwrite    :     134.673 micros/op;  175.3 MB/s    
+readrandom   :       7.858 micros/op; (500000 of 500000 found)
+readmissing  :       7.937 micros/op;                
+readseq      :       0.280 micros/op; 80177.7 MB/s   
+readreverse  :       0.604 micros/op; 35300.6 MB/s   
+seekrandom   :      12.251 micros/op; (500000 of 500000 found)
+
+~/github/softdb/build/db_bench --threads=8 --num=500000 --value_size=2048 --db=/dev/shm/softdbtest --benchmarks=fillseq,fillsync,fillrandom,overwrite,readrandom,readmissing,readseq,readreverse,seekrandom
+SoftDB:    version 1.20
+Date:       Mon May  6 11:06:08 2019
+CPU:        16 * Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
+CPUCache:   20480 KB
+Keys:       16 bytes each
+Values:     2048 bytes each (1024 bytes after compression)
+Entries:    500000
+RawSize:    984.2 MB (estimated)
+FileSize:   495.9 MB (estimated)
+WARNING: Snappy compression is not enabled
+------------------------------------------------
+fillseq      :      84.843 micros/op;  185.5 MB/s    
+fillsync     :      60.621 micros/op;  223.4 MB/s (500 ops)
+fillrandom   :      85.618 micros/op;  183.9 MB/s    
+overwrite    :      85.610 micros/op;  183.8 MB/s    
+readrandom   :       5.128 micros/op; (500000 of 500000 found)
+readmissing  :       5.003 micros/op;                
+readseq      :       0.220 micros/op; 71535.1 MB/s   
+readreverse  :       0.514 micros/op; 30626.5 MB/s   
+seekrandom   :       6.185 micros/op; (500000 of 500000 found)
+
+~/github/softdb/build/db_bench --threads=4 --num=500000 --value_size=2048 --db=/dev/shm/softdbtest --benchmarks=fillseq,fillsync,fillrandom,overwrite,readrandom,readmissing,readseq,readreverse,seekrandom
+SoftDB:    version 1.20
+Date:       Mon May  6 15:22:07 2019
+CPU:        16 * Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
+CPUCache:   20480 KB
+Keys:       16 bytes each
+Values:     2048 bytes each (1024 bytes after compression)
+Entries:    500000
+RawSize:    984.2 MB (estimated)
+FileSize:   495.9 MB (estimated)
+WARNING: Snappy compression is not enabled
+------------------------------------------------
+fillseq      :      32.970 micros/op;  238.4 MB/s    
+fillsync     :      30.480 micros/op;  205.9 MB/s (500 ops)
+fillrandom   :      33.325 micros/op;  235.8 MB/s    
+overwrite    :      33.372 micros/op;  235.8 MB/s    
+readrandom   :       2.879 micros/op; (500000 of 500000 found)
+readmissing  :       2.138 micros/op;                
+readseq      :       0.225 micros/op; 34972.0 MB/s   
+readreverse  :       0.518 micros/op; 15185.8 MB/s   
+seekrandom   :       2.822 micros/op; (500000 of 500000 found)
+
+~/github/softdb/build/db_bench --threads=1 --num=500000 --value_size=2048 --db=/dev/shm/softdbtest --benchmarks=fillseq,fillsync,fillrandom,overwrite,readrandom,readmissing,readseq,readreverse,seekrandom
+SoftDB:    version 1.20
+Date:       Mon May  6 16:05:27 2019
+CPU:        16 * Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
+CPUCache:   20480 KB
+Keys:       16 bytes each
+Values:     2048 bytes each (1024 bytes after compression)
+Entries:    500000
+RawSize:    984.2 MB (estimated)
+FileSize:   495.9 MB (estimated)
+WARNING: Snappy compression is not enabled
+------------------------------------------------
+fillseq      :       3.282 micros/op;  599.7 MB/s    
+fillsync     :      11.540 micros/op;  170.6 MB/s (500 ops)
+fillrandom   :       3.686 micros/op;  534.0 MB/s    
+overwrite    :       3.908 micros/op;  503.7 MB/s    
+readrandom   :       1.843 micros/op; (500000 of 500000 found)
+readmissing  :       0.621 micros/op;                
+readseq      :       0.211 micros/op; 9333.1 MB/s    
+readreverse  :       0.467 micros/op; 4215.0 MB/s    
+seekrandom   :       1.307 micros/op; (500000 of 500000 found)
+
+
+

@@ -1,0 +1,123 @@
+
+./ycsbc -db softdb -dbfilename /dev/shm/softdb -threads 4 -P workloads/workloada.spec
+zipfian const: 0.99
+Loads data Phase
+loading loading 2500000 records...
+loading 2500000 records...
+2500000 records...
+finished ops: loading 2500000 records...
+finished ops: 2490000
+
+
+
+# Loading records:	10000000
+Load time: 119.937s
+Read ops： 0
+Total read time: 0s
+Time per read: -nanms
+Insert ops: 0
+Total insert time: 0s
+Time per insert: -nanms
+Scan ops: 0
+Total scan time: 0s
+Time per scan: -nanms
+
+
+zipfian const: 0.99
+Performs transactions Phase
+running on 2500000 records...
+finished ops: 0running on running on 2500000 records...
+2500000 records...
+running on 2500000 records...
+finished ops: 2490000
+
+
+
+# Transaction throughput (KTPS)
+softdb	workloads/workloada.spec	4	4.66117
+run time: 2.14538e+09us
+
+
+Read ops： 4998889
+Total read time: 8520.08s
+Time per read: 1.70439ms
+Insert ops: 5001067
+Total insert time: 57.1709s
+Time per insert: 0.0114317ms
+Scan ops: 0
+Total scan time: 0s
+Time per scan: -nanms
+
+
+
+./ycsbc -db leveldb -dbfilename /dev/shm/leveldb -threads 4 -P workloads/workloada.spec
+zipfian const: 0.99
+Loads data Phase
+loading loading 2500000 records...loading 2500000 records...
+loading 2500000 records...
+2500000 records...
+finished ops: 0
+finished ops: 2490000
+
+
+
+# Loading records:	10000000
+Load time: 1475.41s
+Read ops： 0
+Total read time: 0s
+Time per read: -nanms
+Insert ops: 0
+Total insert time: 0s
+Time per insert: -nanms
+Scan ops: 0
+Total scan time: 0s
+Time per scan: -nanms
+============================leveldb statistics===========================
+                               Compactions
+Level  Files Size(MB) Time(sec) Read(MB) Write(MB)
+--------------------------------------------------
+  0        0        0        47        0     39637
+  1       42       68        91    62436     62444
+  2      199      255       229   160427    160430
+  3     1938     2561       308   219392    219399
+  4    12893    25254       205   147839    147844
+  5     5906    11521         0       22        22
+
+
+
+zipfian const: 0.99
+Performs transactions Phase
+running on 2500000 records...
+running on 2500000 records...running on running on 2500000 records...
+2500000 records...
+finished ops: 0
+finished ops: 2490000
+
+
+
+# Transaction throughput (KTPS)
+leveldb	workloads/workloada.spec	4	15.5614
+run time: 6.42614e+08us
+
+
+Read ops： 4991797
+Total read time: 801.299s
+Time per read: 0.160523ms
+Insert ops: 4988960
+Total insert time: 1744.35s
+Time per insert: 0.349643ms
+Scan ops: 0
+Total scan time: 0s
+Time per scan: -nanms
+============================leveldb statistics===========================
+                               Compactions
+Level  Files Size(MB) Time(sec) Read(MB) Write(MB)
+--------------------------------------------------
+  0        8       32        73        0     59472
+  1       16       20       125    93568     84866
+  2      176      217       319   216764    213926
+  3     1501     2175       388   274175    270939
+  4    10663    19948       259   185720    184617
+  5    10914    21202         0       22        22
+
+
