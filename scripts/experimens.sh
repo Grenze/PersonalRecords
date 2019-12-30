@@ -41,7 +41,7 @@ ycsb=$profiles"/YCSB/"
 value_size_flag=1
 large_dataset_flag=1
 snapshot_flag=1
-cuckoo_filter_flag=1
+cuckoo_filter_flag=0
 ycsb_flag=1
 
 # mkdirs
