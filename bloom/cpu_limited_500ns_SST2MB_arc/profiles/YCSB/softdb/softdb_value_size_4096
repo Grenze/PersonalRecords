@@ -1,0 +1,570 @@
+zipfian const: 0.99
+Loads data Phase
+loading loading 625000 records...
+625000loading loading 625000 records...
+loading loading 625000 records...
+ records...
+loading 625000 records...
+625000 records...
+loading 625000loading 625000 records...
+ records...
+loading 625000 records...
+625000 records...
+loading 625000 records...
+loading loading 625000loading 625000 records...
+ records...625000 records...
+loading 625000 records...
+loading 625000 records...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Loading records:	10000000
+Load time: 335.839s
+Read ops： 0
+Total read time: 0s
+Time per read: -nanms
+Insert ops: 0
+Total insert time: 0s
+Time per insert: -nanms
+Scan ops: 0
+Total scan time: 0s
+Time per scan: -nanms
+
+
+zipfian const: 0.99
+Performs transactions Phase
+running on running on 625000running on 625000 records...
+running on 625000running on running on 625000 records...running on 625000running on running on running on 625000running on running on 625000 records...
+ records...
+625000 records...
+running on 625000 records...
+running on 625000 records...
+ records...
+625000 records...
+625000 records...
+ records...
+ records...
+running on 625000 records...running on 625000 records...
+
+625000 records...
+
+625000 records...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Transaction throughput (KTPS)
+softdb	/home/yuanyilun/benchmark/workloads/workloada.spec	16	60.1877
+run time: 1.66147e+08us
+
+
+Read ops： 4981140
+Total read time: 108.373s
+Time per read: 0.0217567ms
+Insert ops: 4926653
+Total insert time: 2507.72s
+Time per insert: 0.509011ms
+Scan ops: 0
+Total scan time: 0s
+Time per scan: -nanms
+zipfian const: 0.99
+Loads data Phase
+loading loading loading 625000 records...
+loading loading 625000 records...loading 625000 records...
+625000 records...loading 625000 records...
+loading 625000 records...
+loading 625000 records...loading 625000 records...loading 625000 records...
+
+
+loading 625000 records...
+
+loading 625000 records...
+
+625000 records...
+loading 625000 records...
+loading 625000 records...
+625000 records...
+loading 625000 records...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Loading records:	10000000
+Load time: 336.246s
+Read ops： 0
+Total read time: 0s
+Time per read: -nanms
+Insert ops: 0
+Total insert time: 0s
+Time per insert: -nanms
+Scan ops: 0
+Total scan time: 0s
+Time per scan: -nanms
+
+
+zipfian const: 0.99
+Performs transactions Phase
+running on 625000 records...
+running on running on running on 625000running on running on running on running on 625000 records...625000 records...running on 625000 records...
+running on 625000running on 
+running on 625000 records...running on running on 625000running on 625000 records...
+625000 records...
+625000 records...
+ records...
+625000 records...
+ records...
+625000running on 625000 records...
+625000 records...
+625000 records...
+ records...
+
+ records...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Transaction throughput (KTPS)
+softdb	/home/yuanyilun/benchmark/workloads/workloadb.spec	16	645.97
+run time: 1.54806e+07us
+
+
+Read ops： 9307951
+Total read time: 127.568s
+Time per read: 0.0137053ms
+Insert ops: 495858
+Total insert time: 114.284s
+Time per insert: 0.230477ms
+Scan ops: 0
+Total scan time: 0s
+Time per scan: -nanms
+zipfian const: 0.99
+Loads data Phase
+loading loading loading loading 625000 records...
+loading 625000loading 625000loading loading loading 625000 records...
+loading 625000 records...
+625000 records...625000 records...
+loading loading 625000 records...
+loading 625000 records... records...
+
+loading 625000 records...
+625000 records...
+625000 records...
+ records...
+loading 625000 records...
+loading 625000 records...
+625000 records...
+
+625000 records...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Loading records:	10000000
+Load time: 336.143s
+Read ops： 0
+Total read time: 0s
+Time per read: -nanms
+Insert ops: 0
+Total insert time: 0s
+Time per insert: -nanms
+Scan ops: 0
+Total scan time: 0s
+Time per scan: -nanms
+
+
+zipfian const: 0.99
+Performs transactions Phase
+running on 625000 records...
+running on 625000 records...
+running on running on 625000 records...running on running on running on 625000 records...running on running on 625000 records...
+625000 records...
+running on 625000 records...
+running on 625000 records...running on 625000 records...
+running on 625000 records...
+
+
+625000 records...
+running on 625000 records...
+
+running on 625000 records...running on 625000 records...
+625000 records...
+
+625000 records...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Transaction throughput (KTPS)
+softdb	/home/yuanyilun/benchmark/workloads/workloadc.spec	16	1188.29
+run time: 8.41545e+06us
+
+
+Read ops： 9688276
+Total read time: 127.085s
+Time per read: 0.0131174ms
+Insert ops: 0
+Total insert time: 0s
+Time per insert: -nanms
+Scan ops: 0
+Total scan time: 0s
+Time per scan: -nanms
+zipfian const: 0.99
+Loads data Phase
+loading loading 625000 records...loading loading loading 625000loading loading loading 625000loading 625000 records...
+625000 records...
+625000 records...
+loading 625000loading 625000loading 625000 records...
+loading loading 625000 records...625000 records...
+625000 records...
+625000 records...
+ records...
+loading 625000 records...
+loading 625000 records...
+625000 records...
+
+ records...
+
+ records...
+ records...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Loading records:	10000000
+Load time: 336.726s
+Read ops： 0
+Total read time: 0s
+Time per read: -nanms
+Insert ops: 0
+Total insert time: 0s
+Time per insert: -nanms
+Scan ops: 0
+Total scan time: 0s
+Time per scan: -nanms
+
+
+zipfian const: 0.99
+Performs transactions Phase
+running on running on running on 625000running on 625000 records...
+625000running on 625000 records...running on running on 625000 records... records...running on 625000 records...running on 625000running on 625000 records...
+running on 625000 records...
+running on 625000 records...
+625000 records...
+running on 625000 records...
+ records...
+
+ records...
+running on 625000 records...
+running on 625000 records...
+
+625000 records...
+
+running on 625000 records...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Transaction throughput (KTPS)
+softdb	/home/yuanyilun/benchmark/workloads/workloadd.spec	16	580.429
+run time: 1.72286e+07us
+
+
+Read ops： 9334570
+Total read time: 167.209s
+Time per read: 0.0179129ms
+Insert ops: 496116
+Total insert time: 101.941s
+Time per insert: 0.205478ms
+Scan ops: 0
+Total scan time: 0s
+Time per scan: -nanms
+zipfian const: 0.99
+Loads data Phase
+loading loading 625000loading 625000loading 625000 records...loading 625000 records...
+625000 records...loading 625000loading 625000 records...
+loading loading loading 625000 records...
+ records...loading 625000 records...
+625000 records...
+loading loading 625000 records...
+625000 records...
+
+ records...
+loading 625000
+
+loading 625000 records...
+ records...
+ records...
+loading 625000 records...
+625000 records...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Loading records:	10000000
+Load time: 335.554s
+Read ops： 0
+Total read time: 0s
+Time per read: -nanms
+Insert ops: 0
+Total insert time: 0s
+Time per insert: -nanms
+Scan ops: 0
+Total scan time: 0s
+Time per scan: -nanms
+
+
+zipfian const: 0.99
+Performs transactions Phase
+running on 625000running on 625000 records...
+running on 625000 records...
+running on running on 625000running on 625000 records...
+running on 625000 records...
+ records...
+ records...
+running on 625000 records...
+running on 625000 records...running on running on 625000 records...running on running on 625000 records...
+
+625000 records...
+625000 records...
+running on 625000 records...running on 625000 records...
+
+
+running on 625000 records...
+625000 records...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Transaction throughput (KTPS)
+softdb	/home/yuanyilun/benchmark/workloads/workloade.spec	16	81.4014
+run time: 1.22848e+08us
+
+
+Read ops： 0
+Total read time: 0s
+Time per read: -nanms
+Insert ops: 497972
+Total insert time: 231.63s
+Time per insert: 0.465146ms
+Scan ops: 9453040
+Total scan time: 1721.12s
+Time per scan: 0.182071ms
+zipfian const: 0.99
+Loads data Phase
+loading 625000 records...
+loading 625000 records...
+loading 625000 records...
+loading loading 625000loading 625000 records...
+loading loading 625000 records...
+625000 records...
+ records...loading 625000 records...
+
+625000 records...
+loading 625000 records...
+loading 625000 records...
+loading 625000 records...
+loading 625000 records...
+loading 625000 records...
+loading 625000 records...
+loading 625000 records...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Loading records:	10000000
+Load time: 335.197s
+Read ops： 0
+Total read time: 0s
+Time per read: -nanms
+Insert ops: 0
+Total insert time: 0s
+Time per insert: -nanms
+Scan ops: 0
+Total scan time: 0s
+Time per scan: -nanms
+
+
+zipfian const: 0.99
+Performs transactions Phase
+running on running on 625000 records...running on 625000 records...
+running on running on 625000 records...
+running on running on 625000 records...running on running on 625000running on 625000 records...
+running on running on 625000 records...
+running on 625000 records...
+running on 625000 records...
+625000 records...
+
+running on 625000 records...
+running on 625000 records...
+625000 records...
+625000 records...
+625000 records...
+
+ records...
+625000 records...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Transaction throughput (KTPS)
+softdb	/home/yuanyilun/benchmark/workloads/workloadf.spec	16	60.7636
+run time: 1.64572e+08us
+
+
+Read ops： 4980604
+Total read time: 109.641s
+Time per read: 0.0220136ms
+Insert ops: 0
+Total insert time: 0s
+Time per insert: -nanms
+Scan ops: 0
+Total scan time: 0s
+Time per scan: -nanms

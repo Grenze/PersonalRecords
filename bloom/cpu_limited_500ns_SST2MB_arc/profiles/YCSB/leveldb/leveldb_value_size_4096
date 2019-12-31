@@ -1,0 +1,702 @@
+zipfian const: 0.99
+Loads data Phase
+loading loading 625000loading 625000625000loading loading loading 625000 records...
+loading 625000 records...
+loading 625000 records...
+loading 625000 records...
+loading 625000 records...
+ records...
+loading  records...
+loading 625000 records...
+ records...
+loading 625000 records...
+625000 records...
+loading loading 625000625000 records...
+625000 records...loading 
+ records...
+625000 records...
+625000 records...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Loading records:	10000000
+Load time: 2285.98s
+Read ops： 0
+Total read time: 0s
+Time per read: -nanms
+Insert ops: 0
+Total insert time: 0s
+Time per insert: -nanms
+Scan ops: 0
+Total scan time: 0s
+Time per scan: -nanms
+============================leveldb statistics===========================
+                               Compactions
+Level  Files Size(MB) Time(sec) Read(MB) Write(MB)
+--------------------------------------------------
+  0       11      708       229        0     39481
+  1        2       65       221    38772     38838
+  2       30      964       238    40096     40162
+  3      130     3025       836   148180    148186
+  4      964    29980       719   128224    128226
+  5      157     4878         0       65        65
+
+
+
+zipfian const: 0.99
+Performs transactions Phase
+running on 625000 records...running on 625000 records...running on 625000running on running on running on running on 625000 records...
+running on 625000 records...running on running on running on 625000 records...
+running on 625000 records...
+625000 records...
+625000 records...running on 625000 records...
+625000 records...
+
+625000 records...
+ records...
+
+running on 625000 records...
+
+running on 625000 records...
+
+625000 records...
+running on 625000 records...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Transaction throughput (KTPS)
+leveldb	/home/yuanyilun/benchmark/workloads/workloada.spec	16	14.6936
+run time: 6.8057e+08us
+
+
+Read ops： 4981241
+Total read time: 260.854s
+Time per read: 0.0523673ms
+Insert ops: 4784158
+Total insert time: 9780.45s
+Time per insert: 2.04434ms
+Scan ops: 0
+Total scan time: 0s
+Time per scan: -nanms
+============================leveldb statistics===========================
+                               Compactions
+Level  Files Size(MB) Time(sec) Read(MB) Write(MB)
+--------------------------------------------------
+  0        6      387       343        0     59266
+  1        8      228       273    58882     47757
+  2       15      379       335    57593     56489
+  3      133     2991      1070   191527    189165
+  4      964    29969       888   159056    158538
+  5      328    10204         0       65        65
+
+zipfian const: 0.99
+Loads data Phase
+loading 625000loading loading loading loading loading loading loading 625000 records...loading 625000 records...loading loading 625000loading loading 625000 records...
+
+625000 records...
+ records...
+625000 records...
+loading 625000 records...
+625000 records...
+ records...
+loading 625000625000 records...
+loading 625000 records...
+625000 records...
+ records...
+625000 records...
+625000 records...
+625000 records...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Loading records:	10000000
+Load time: 2288.81s
+Read ops： 0
+Total read time: 0s
+Time per read: -nanms
+Insert ops: 0
+Total insert time: 0s
+Time per insert: -nanms
+Scan ops: 0
+Total scan time: 0s
+Time per scan: -nanms
+============================leveldb statistics===========================
+                               Compactions
+Level  Files Size(MB) Time(sec) Read(MB) Write(MB)
+--------------------------------------------------
+  0       11      708       229        0     39482
+  1        2       65       221    38773     38839
+  2       31      997       238    39983     40048
+  3      131     2996       836   147780    147786
+  4      964    29968       720   128010    128011
+  5      155     4887         1       97        97
+
+
+
+zipfian const: 0.99
+Performs transactions Phase
+running on 625000running on 625000 records...
+running on running on running on running on 625000 records...
+running on running on 625000 records...
+running on 625000running on 625000 records...
+625000 records...
+625000running on 625000 records...
+running on 625000 records...
+ records...
+ records...
+running on 625000 records...
+625000 records...
+running on 625000 records...
+625000 records...
+ records...
+running on running on 625000 records...
+625000 records...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Transaction throughput (KTPS)
+leveldb	/home/yuanyilun/benchmark/workloads/workloadb.spec	16	65.1286
+run time: 1.53542e+08us
+
+
+Read ops： 9426235
+Total read time: 883.89s
+Time per read: 0.0937691ms
+Insert ops: 495600
+Total insert time: 1301.45s
+Time per insert: 2.626ms
+Scan ops: 0
+Total scan time: 0s
+Time per scan: -nanms
+============================leveldb statistics===========================
+                               Compactions
+Level  Files Size(MB) Time(sec) Read(MB) Write(MB)
+--------------------------------------------------
+  0        6      387       241        0     41479
+  1        2       41       230    41092     40270
+  2       19      413       253    42334     42351
+  3      130     3111       882   155102    155097
+  4      964    29977       791   140365    140365
+  5      214     6739         1       97        97
+
+zipfian const: 0.99
+Loads data Phase
+loading loading 625000loading loading loading loading 625000loading loading 625000 records...
+loading 625000 records...
+loading 625000 records...625000 records...
+loading 625000loading 625000 records...
+loading loading 625000 records...
+625000 records...
+loading 625000 records...
+ records...
+625000 records...
+625000 records...
+
+ records...
+625000 records...
+ records...
+loading 625000 records...
+625000 records...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Loading records:	10000000
+Load time: 2291.52s
+Read ops： 0
+Total read time: 0s
+Time per read: -nanms
+Insert ops: 0
+Total insert time: 0s
+Time per insert: -nanms
+Scan ops: 0
+Total scan time: 0s
+Time per scan: -nanms
+============================leveldb statistics===========================
+                               Compactions
+Level  Files Size(MB) Time(sec) Read(MB) Write(MB)
+--------------------------------------------------
+  0       11      708       229        0     39481
+  1        2       65       221    38773     38839
+  2       31      997       239    40189     40255
+  3      138     2983       837   148379    148386
+  4      958    29994       722   128805    128807
+  5      156     4874         1      162       162
+
+
+
+zipfian const: 0.99
+Performs transactions Phase
+running on running on running on running on 625000running on 625000 records...
+running on running on 625000 records...
+running on 625000 records...running on running on 625000 records...running on 625000 records...
+running on 625000 records...
+625000 records...
+625000 records...
+running on 625000 records...
+running on 625000625000 records...
+ records...
+ records...
+625000 records...
+
+
+running on 625000 records...
+running on 625000 records...
+625000 records...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Transaction throughput (KTPS)
+leveldb	/home/yuanyilun/benchmark/workloads/workloadc.spec	16	88.5154
+run time: 1.12975e+08us
+
+
+Read ops： 9939674
+Total read time: 1790.69s
+Time per read: 0.180156ms
+Insert ops: 0
+Total insert time: 0s
+Time per insert: -nanms
+Scan ops: 0
+Total scan time: 0s
+Time per scan: -nanms
+============================leveldb statistics===========================
+                               Compactions
+Level  Files Size(MB) Time(sec) Read(MB) Write(MB)
+--------------------------------------------------
+  0        0        0       229        0     39481
+  1        0        0       225    39481     39547
+  2        9      289       244    40900     40965
+  3      145     3138       872   153815    153821
+  4      884    27753       789   137907    137908
+  5      270     8441         1      162       162
+
+zipfian const: 0.99
+Loads data Phase
+loading loading 625000 records...loading 625000 records...
+625000 records...loading 625000 records...loading 625000 records...
+loading 625000 records...
+
+loading 625000 records...
+loading 625000 records...
+loading 625000 records...
+loading 625000 records...
+loading 625000 records...
+
+
+loading loading loading 625000 records...
+625000 records...
+625000 records...
+loading 625000 records...
+loading 625000 records...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Loading records:	10000000
+Load time: 2285.28s
+Read ops： 0
+Total read time: 0s
+Time per read: -nanms
+Insert ops: 0
+Total insert time: 0s
+Time per insert: -nanms
+Scan ops: 0
+Total scan time: 0s
+Time per scan: -nanms
+============================leveldb statistics===========================
+                               Compactions
+Level  Files Size(MB) Time(sec) Read(MB) Write(MB)
+--------------------------------------------------
+  0       11      708       229        0     39481
+  1        8      258       221    38773     38838
+  2       26      803       237    39892     39957
+  3      134     2969       837   148084    148091
+  4      964    29997       718   127757    127758
+  5      158     4885         0       65        65
+
+
+
+zipfian const: 0.99
+Performs transactions Phase
+running on 625000 records...running on running on 
+625000 records...
+running on 625000 records...
+running on 625000 records...
+625000 records...
+running on 625000 records...running on 625000 records...running on 625000running on running on 625000 records...
+
+running on 625000 records...
+625000 records...
+running on 625000 records...
+
+running on running on 625000 records... records...
+running on 625000 records...
+
+625000 records...
+running on 625000 records...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Transaction throughput (KTPS)
+leveldb	/home/yuanyilun/benchmark/workloads/workloadd.spec	16	55.0162
+run time: 1.81765e+08us
+
+
+Read ops： 9424212
+Total read time: 581.573s
+Time per read: 0.0617105ms
+Insert ops: 495643
+Total insert time: 2049.8s
+Time per insert: 4.13565ms
+Scan ops: 0
+Total scan time: 0s
+Time per scan: -nanms
+============================leveldb statistics===========================
+                               Compactions
+Level  Files Size(MB) Time(sec) Read(MB) Write(MB)
+--------------------------------------------------
+  0        6      386       241        0     41477
+  1        2       65       234    41091     41157
+  2       31      966       254    42470     42535
+  3      128     3000       887   156670    156677
+  4      963    29988       805   143400    143398
+  5      234     7207         0       65        65
+
+zipfian const: 0.99
+Loads data Phase
+loading loading loading loading loading 625000 records...
+625000loading loading 625000 records...
+loading 625000 records...
+625000 records...
+loading loading loading 625000 records...
+loading 625000 records...
+625000 records...
+loading 625000 records...
+loading 625000625000 records...
+625000 records...
+625000 records...
+loading 625000 records...
+ records...
+loading 625000 records...
+ records...
+625000 records...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Loading records:	10000000
+Load time: 2306.43s
+Read ops： 0
+Total read time: 0s
+Time per read: -nanms
+Insert ops: 0
+Total insert time: 0s
+Time per insert: -nanms
+Scan ops: 0
+Total scan time: 0s
+Time per scan: -nanms
+============================leveldb statistics===========================
+                               Compactions
+Level  Files Size(MB) Time(sec) Read(MB) Write(MB)
+--------------------------------------------------
+  0       11      708       229        0     39481
+  1       10      323       222    38773     38839
+  2       23      738       241    40227     40292
+  3      140     3000       833   146421    146427
+  4      961    29985       736   130303    130305
+  5      157     4866         1      226       226
+
+
+
+zipfian const: 0.99
+Performs transactions Phase
+running on 625000 records...running on 625000running on running on running on running on 625000 records...running on 625000 records...
+running on running on 625000running on 625000 records...
+running on 625000 records...running on 625000 records...
+running on 625000 records...
+running on 625000 records...625000 records...
+625000 records...
+
+running on 625000 records...
+625000 records...
+625000 records...
+
+ records...
+ records...
+running on 625000 records...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Transaction throughput (KTPS)
+leveldb	/home/yuanyilun/benchmark/workloads/workloade.spec	16	30.1085
+run time: 3.32132e+08us
+
+
+Read ops： 0
+Total read time: 0s
+Time per read: -nanms
+Insert ops: 499547
+Total insert time: 829.557s
+Time per insert: 1.66062ms
+Scan ops: 9482456
+Total scan time: 4466.2s
+Time per scan: 0.470996ms
+============================leveldb statistics===========================
+                               Compactions
+Level  Files Size(MB) Time(sec) Read(MB) Write(MB)
+--------------------------------------------------
+  0        0        0       242        0     41477
+  1       18      580       241    41477     41543
+  2        6      194       259    42322     42387
+  3      110     2246       927   158142    158148
+  4      720    22471       920   155496    155344
+  5      512    15973         1      226       226
+
+zipfian const: 0.99
+Loads data Phase
+loading loading loading loading loading loading loading loading loading 625000loading loading loading 625000loading 625000 records...loading 625000 records...
+625000 records...
+625000 records...
+625000 records...
+
+625000 records...
+625000 records...
+ records...
+625000 records...
+ records...
+625000 records...
+625000 records...
+loading 625000 records...
+625000 records...
+625000 records...
+loading 625000 records...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Loading records:	10000000
+Load time: 2282.64s
+Read ops： 0
+Total read time: 0s
+Time per read: -nanms
+Insert ops: 0
+Total insert time: 0s
+Time per insert: -nanms
+Scan ops: 0
+Total scan time: 0s
+Time per scan: -nanms
+============================leveldb statistics===========================
+                               Compactions
+Level  Files Size(MB) Time(sec) Read(MB) Write(MB)
+--------------------------------------------------
+  0       11      708       229        0     39482
+  1        2       65       221    38803     38869
+  2       31      997       241    40403     40468
+  3      135     2989       831   147160    147166
+  4      962    29973       717   128198    128199
+  5      156     4890         1      129       129
+
+
+
+zipfian const: 0.99
+Performs transactions Phase
+running on 625000running on 625000 records...
+ records...running on 625000 records...
+running on 625000 records...
+running on 625000 records...
+running on running on 625000running on 625000 records...
+running on 625000 records...
+running on 625000 records...
+running on 625000 records...
+running on 625000 records...
+running on running on 625000 records...running on 625000 records...
+ records...
+625000 records...
+625000 records...
+running on 625000 records...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Transaction throughput (KTPS)
+leveldb	/home/yuanyilun/benchmark/workloads/workloadf.spec	16	14.6093
+run time: 6.84494e+08us
+
+
+Read ops： 4981984
+Total read time: 286.193s
+Time per read: 0.0574457ms
+Insert ops: 0
+Total insert time: 0s
+Time per insert: -nanms
+Scan ops: 0
+Total scan time: 0s
+Time per scan: -nanms
+============================leveldb statistics===========================
+                               Compactions
+Level  Files Size(MB) Time(sec) Read(MB) Write(MB)
+--------------------------------------------------
+  0        6      387       344        0     59267
+  1        9      262       273    58916     47789
+  2       14      339       339    57979     56868
+  3      127     2990      1060   189721    187391
+  4      967    29986       893   160248    159722
+  5      326    10188         3      595       574
+
