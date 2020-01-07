@@ -1,0 +1,59 @@
+LevelDB:    version 1.20
+Date:       Tue Jan  7 10:38:24 2020
+CPU:        16 * Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
+CPUCache:   20480 KB
+... finished 100 ops                              ... finished 200 ops                              ... finished 300 ops                              ... finished 400 ops                              ... finished 500 ops                              ... finished 600 ops                              ... finished 700 ops                              ... finished 800 ops                              ... finished 900 ops                              ... finished 1000 ops                              ... finished 1500 ops                              ... finished 2000 ops                              ... finished 2500 ops                              ... finished 3000 ops                              ... finished 3500 ops                              ... finished 4000 ops                              ... finished 4500 ops                              ... finished 5000 ops                              ... finished 6000 ops                              ... finished 7000 ops                              ... finished 8000 ops                              ... finished 9000 ops                              ... finished 10000 ops                              ... finished 15000 ops                              ... finished 20000 ops                              ... finished 25000 ops                              ... finished 30000 ops                              ... finished 35000 ops                              ... finished 40000 ops                              ... finished 45000 ops                              ... finished 50000 ops                              ... finished 60000 ops                              ... finished 70000 ops                              ... finished 80000 ops                              ... finished 90000 ops                              ... finished 100000 ops                              ... finished 150000 ops                              ... finished 200000 ops                              ... finished 250000 ops                              ... finished 300000 ops                              ... finished 350000 ops                              ... finished 400000 ops                              ... finished 450000 ops                              ... finished 500000 ops                              Keys:       16 bytes each
+Values:     8192 bytes each (4096 bytes after compression)
+Entries:    500000
+RawSize:    3913.9 MB (estimated)
+FileSize:   1960.8 MB (estimated)
+WARNING: Snappy compression is not enabled
+------------------------------------------------
+fillrandom   :     100.373 micros/op;   78.0 MB/s
+... finished 100 ops                              ... finished 200 ops                              ... finished 300 ops                              ... finished 400 ops                              ... finished 500 ops                              ... finished 600 ops                              ... finished 700 ops                              ... finished 800 ops                              ... finished 900 ops                              ... finished 1000 ops                              ... finished 1500 ops                              ... finished 2000 ops                              ... finished 2500 ops                              ... finished 3000 ops                              ... finished 3500 ops                              ... finished 4000 ops                              ... finished 4500 ops                              ... finished 5000 ops                              ... finished 6000 ops                              ... finished 7000 ops                              ... finished 8000 ops                              ... finished 9000 ops                              ... finished 10000 ops                              ... finished 15000 ops                              ... finished 20000 ops                              ... finished 25000 ops                              ... finished 30000 ops                              ... finished 35000 ops                              ... finished 40000 ops                              ... finished 45000 ops                              ... finished 50000 ops                              ... finished 60000 ops                              ... finished 70000 ops                              ... finished 80000 ops                              ... finished 90000 ops                              ... finished 100000 ops                              ... finished 150000 ops                              ... finished 200000 ops                              ... finished 250000 ops                              ... finished 300000 ops                              ... finished 350000 ops                              ... finished 400000 ops                              ... finished 450000 ops                              ... finished 500000 ops                              confirm: 	1
+DBImpl_Get: 	0
+lock_wait: 	0
+compact: 	0
+mems_Get: 	0
+Version_Get: 	0
+mis_file_search: 	0
+table_cache_Get: 	0
+table_cache_Get_times: 	0
+find_table: 	388831221
+Internal_Get: 	0
+index_block_iter: 	0
+filter_KeyMayMatch: 	0
+data_block_iter: 	0
+data_block_iter_times: 	0
+data_block_iter_init: 	0
+block_read: 	2670066312
+block_read_times: 	4637864
+data_block_binary: 	4257883
+data_block_binary_times: 	25449
+save_value: 	0
+value_copy: 	0
+write_len: 	45401411126
+readrandom   :      18.250 micros/op; (500000 of 500000 found)
+confirm: 	1
+DBImpl_Get: 	8978736040
+lock_wait: 	850291888
+compact: 	17105146
+mems_Get: 	199382864
+Version_Get: 	7789923309
+mis_file_search: 	585399591
+table_cache_Get: 	7344000050
+table_cache_Get_times: 	922613
+find_table: 	3461958653
+Internal_Get: 	3849658216
+index_block_iter: 	755275023
+filter_KeyMayMatch: 	243238940
+data_block_iter: 	2174864177
+data_block_iter_times: 	534165
+data_block_iter_init: 	1877949804
+block_read: 	2191862400
+block_read_times: 	1054778
+data_block_binary: 	869070721
+data_block_binary_times: 	1584339
+save_value: 	505081135
+value_copy: 	469560437
+write_len: 	4119603392
