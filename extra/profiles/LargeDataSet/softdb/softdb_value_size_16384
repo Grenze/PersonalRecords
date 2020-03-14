@@ -18,7 +18,7 @@ unknown benchmark 'printprofile'
 Intervals(/KVs): 488007440 Bytes
 KVs: 9560573 Records
 Write Intervals: 4915410456 Bytes
-open         : 47963622.000 micros/op;
+open         : 5403.000 micros/op;
 Intervals(/KVs): 7680 Bytes
 KVs: 160 Records
 Write Intervals: 7680 Bytes
